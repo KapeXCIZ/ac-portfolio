@@ -3,7 +3,12 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import localFont from 'next/font/local'
 
+const myFont = localFont({
+  src: '/Edensor.otf',
+  variable: "--font-deco"
+})
 
 export const metadata: Metadata = {
   title: "Alessio Capecchi",
@@ -22,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${myFont.variable}`}>
         <head >
           <meta name="apple-mobile-web-app-title" content="AC" />
         </head>

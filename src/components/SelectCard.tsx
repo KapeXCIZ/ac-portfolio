@@ -11,14 +11,14 @@ type SelectCardSubComponent = {
 
 const SelectCard: React.FC<SelectCardProps> & SelectCardSubComponent = ({ children, ...props }) => {
     return (
-        <div className="group min-w-0 overflow-hidden h-full w-full flex flex-col justify-start gap-4 bg-accent-100 dark:bg-accent-900  flex-[1] transition-[flex] hover:flex-[2] rounded-2xl ease-spring duration-(--spring-duration) p-10 relative " {...props}>
+        <div className="group min-w-0 overflow-hidden h-full w-full flex flex-col justify-start gap-4 bg-accent-200 dark:bg-accent-800  flex-[1] transition-[flex] hover:flex-[2] rounded-4xl ease-spring duration-(--spring-duration) p-10 relative " {...props}>
             {children}
         </div>
     );
 };
 
 SelectCard.Title = ({ children }) => (
-    <h2 className="text-7xl font-mono group-hover:tracking-widest transition-all ease-spring duration-(--spring-duration) ">{children}</h2>
+    <h2 className="text-5xl xl:text-7xl font-mono group-hover:tracking-widest transition-all ease-spring duration-(--spring-duration) ">{children}</h2>
 )
 SelectCard.Title.displayName = "SelectCard.Title"
 
