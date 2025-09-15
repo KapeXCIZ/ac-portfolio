@@ -1,3 +1,5 @@
+'use client'
+
 import React, { ReactNode } from 'react'
 
 type SelectCardProps = React.ComponentPropsWithoutRef<"div"> & {

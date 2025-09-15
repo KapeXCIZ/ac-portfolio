@@ -4,6 +4,7 @@ import "./globals.css";
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import localFont from 'next/font/local'
+import Navbar from "@/components/common/Navbar";
 
 const myFont = localFont({
   src: '/Edensor.otf',
@@ -12,7 +13,7 @@ const myFont = localFont({
 
 export const metadata: Metadata = {
   title: "Alessio Capecchi",
-  description: "Home page for Alessio's websites",
+  description: "Select page for Alessio's websites",
   icons: {
     icon: [
       { url: '/logo.svg', media: '(prefers-color-scheme: dark)' },
@@ -38,6 +39,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Navbar />
             {children}
           </ThemeProvider>
         </body>

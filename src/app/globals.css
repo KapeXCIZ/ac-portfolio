@@ -3,12 +3,26 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::selection {
+  background: color-mix(in srgb, var(--color-accent-500) 50%, transparent);
+  color: var(--foreground);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: color-mix(in srgb, var(--color-accent-500) 50%, transparent);
+  color: var(--foreground);
+  text-shadow: none;
+}
+
 :root {
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* --hue: 310; */
 
   --hue: 310;
 
@@ -88,6 +102,7 @@
   --color-accent-300: oklch(80% .2 var(--hue));
   --color-accent-400: oklch(72% .25 var(--hue));
   --color-accent-500: oklch(65% .34 var(--hue));
+  --color-accent-550: oklch(55% .34 var(--hue));
   --color-accent-600: oklch(50% .27 var(--hue));
   --color-accent-700: oklch(35% .25 var(--hue));
   --color-accent-800: oklch(25% .2 var(--hue));
@@ -96,7 +111,6 @@
   --ease-spring: cubic-bezier(0.34, 1.56, 0.54, 1);
   --spring-duration: .8s;
 }
-
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -268,4 +282,43 @@
 
 .shadow-color {
   display: block;
+}
+
+.underlineHover {
+  position: relative;
+  color: var(--foreground);
+}
+
+.underlineHover::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent-300);
+  transition: width 0.4s ease-out;
+  z-index: 20;
+}
+
+
+.underlineHover:hover::after,
+.underlineHoverActive::after {
+  width: 100%;
+}
+
+.spotlight-text {
+  background: radial-gradient(circle at center, var(--foreground), 92%, color-mix(in srgb, var(--color-accent-500) 15%, transparent));
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.glow {
+  box-shadow:
+    0 0 20px var(--color-accent-300),
+    0 0 40px var(--color-accent-500),
+    0 0 80px var(--color-accent-500),
+    0 0 160px var(--color-accent-550);
+  ;
 }
