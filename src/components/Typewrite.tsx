@@ -30,7 +30,7 @@ class TxtClass {
 
                 // se è l'ultimo carattere, pianifica chiamata finale onComplete
                 if (i === this.txt.length - 1) {
-                    const tEnd = window.setTimeout(() => onComplete?.(), 1500);
+                    const tEnd = window.setTimeout(() => this.delete(wrapperId, onComplete), 1500);
                     timers.push(tEnd);
                 }
             }, cumulativeDelay); // ← qui usiamo cumulativeDelay (con jitter)
@@ -39,6 +39,33 @@ class TxtClass {
         }
 
         return timers;
+    }
+
+    public delete(wrapperId: number, onComplete?: () => void): number[] {
+        const timers: number[] = [];
+        let cumulativeDelay = 0;
+
+        for (let i = this.txt.length; i > 0; i--) {
+
+            cumulativeDelay += 100;
+
+            const snapshot = this.txt.substring(0, i - 1);       // evita problemi di closure
+
+            const t = window.setTimeout(() => {
+                const d = document.getElementById("typewrite" + wrapperId);
+                if (d) d.textContent = snapshot;
+
+                // se è l'ultimo carattere, pianifica chiamata finale onComplete
+                if (i === 1) {
+                    const tEnd = window.setTimeout(() => onComplete?.(), 500);
+                    timers.push(tEnd);
+                }
+            }, cumulativeDelay); // ← qui usiamo cumulativeDelay (con jitter)
+
+            timers.push(t);
+        }
+
+        return timers
     }
 }
 
@@ -59,8 +86,10 @@ export default function Typewrite({ phrases, period, id }: { phrases: string[]; 
     }, [currentText, txts, period, id, phrases.length])
 
     return (
-        <span id={`typewrite${id}`}>
+        <>
+            <span id={`typewrite${id}`} className="typewrite">
 
-        </span>
+            </span>
+        </>
     )
 };

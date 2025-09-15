@@ -45,6 +45,8 @@ export default function SelectSection() {
 
     return (
         <section className="flex justify-center flex-col px-4 lg:flex-row items-center text-body h-[85vh] gap-6 container *:max-h-[1000px] mx-auto py-4 md:py-10 ">
+            <span className="absolute w-full h-full bg-[url(/images/bg-logo-1.png)] bg-center brightness-5 dark:brightness-10 dark:md:brightness-8  invert dark:invert-0 mask-radial-[80%_60%] mask-radial-from-30%   -z-5 " />
+
             <a href="/home"
                 onMouseEnter={() => router.prefetch("/home")}
                 onClick={(e) => {

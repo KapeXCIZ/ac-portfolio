@@ -322,3 +322,21 @@
     0 0 160px var(--color-accent-550);
   ;
 }
+
+.typewrite {
+  position: relative;
+  color: var(--foreground);
+
+}
+
+.typewrite::after {
+  position: absolute;
+  content: "";
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: 6px;
+  background-color: var(--color-accent-400);
+  animation: caret-blink 1s ease-in infinite;
+}
