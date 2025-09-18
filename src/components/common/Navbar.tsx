@@ -41,9 +41,9 @@ export default function Navbar() {
                     About
                 </Link>
             </div>
-            <span className="flex justify-center items-center gap-2">
-                <HueSlider hue={currentHue} onValueChange={handleChange} />
-                <ModeToggle />
+            <span className="flex justify-center items-center ">
+                <HueSlider className="rounded-e-none" hue={currentHue} onValueChange={handleChange} />
+                <ModeToggle className="rounded-s-none" />
             </span>
         </div >
     )
