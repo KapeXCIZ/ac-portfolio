@@ -12,6 +12,16 @@ import HueSlider from "../HueSlider";
 export default function Navbar() {
     const currPage = usePathname();
     const [currentHue, setCurrentHue] = useState<number>(310);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setIsScrolled(window.scrollY > 40);
+        };
+
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     // Slider passes an array of numbers; take the first value
     const handleChange = (value: number[]) => {
@@ -26,25 +36,27 @@ export default function Navbar() {
     }, [currentHue])
 
     return (
-        <div className="h-[10vh] md:h-20  position-sticky top-0 flex  justify-between items-center w-full container mx-auto py-4 px-4 ">
-            <Link href={"/"} className="h-3/4 shine active:*:shadow">
-                <Logo className="h-full" />
-            </Link>
-            <div className="flex flex-row gap-4 text-md md:text-lg ">
-                <Link href={"/home"} className={cn("underlineHover  active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/home" ? "underlineHoverActive" : "")}>
-                    Home
+        <div className={cn("py-4 px-4 sticky   z-50 h-[7vh]   position-sticky top-0 backdrop-blur-lg  duration-[.8s] border-b border-transparent transition-all ", isScrolled ? "bg-background/70 border-white-400/25 shadow-2xl dark:shadow-accent-600/15 shadow-accent-400/10" : "")}>
+            <div className="h-full flex container justify-between items-center w-full  mx-auto z-50 px-4">
+                <Link href={"/"} className="h-3/4 shine active:*:shadow">
+                    <Logo className="h-full" />
                 </Link>
-                <Link href={"/projects"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out", currPage == "/projects" ? "underlineHoverActive" : "")}>
-                    Projects
-                </Link>
-                <Link href={"/about"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/about" ? "underlineHoverActive" : "")}>
-                    About
-                </Link>
-            </div>
-            <span className="flex justify-center items-center ">
-                <HueSlider className="rounded-e-none" hue={currentHue} onValueChange={handleChange} />
-                <ModeToggle className="rounded-s-none" />
-            </span>
-        </div >
+                <div className="flex flex-row gap-4 text-md md:text-lg ">
+                    <Link href={"/home"} className={cn("underlineHover  active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/home" ? "underlineHoverActive" : "")}>
+                        Home
+                    </Link>
+                    <Link href={"/projects"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out", currPage == "/projects" ? "underlineHoverActive" : "")}>
+                        Projects
+                    </Link>
+                    <Link href={"/about"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/about" ? "underlineHoverActive" : "")}>
+                        About
+                    </Link>
+                </div>
+                <span className="flex justify-center items-center ">
+                    <HueSlider className="rounded-e-none" hue={currentHue} onValueChange={handleChange} />
+                    <ModeToggle className="rounded-s-none" />
+                </span>
+            </div >
+        </div>
     )
 };
