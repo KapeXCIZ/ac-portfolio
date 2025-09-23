@@ -25,7 +25,7 @@
 
   /* --hue: 310; */
 
-  --hue: 310;
+  --hue: 10;
 
   --radius: 1rem;
 
@@ -100,6 +100,7 @@
   --color-accent-200: oklch(90% 0.1 var(--hue));
   --color-accent-300: oklch(80% 0.2 var(--hue));
   --color-accent-400: oklch(72% 0.25 var(--hue));
+  --color-accent-450: oklch(70% 0.28 var(--hue));
   --color-accent-500: oklch(65% 0.34 var(--hue));
   --color-accent-550: oklch(55% 0.34 var(--hue));
   --color-accent-600: oklch(50% 0.27 var(--hue));
@@ -339,8 +340,13 @@
 }
 
 .glow {
-  box-shadow: 0 0 20px var(--color-accent-300), 0 0 40px var(--color-accent-500),
+  box-shadow: 0 0 20px var(--color-accent-300), 0 0 40px var(--color-accent-400),
     0 0 80px var(--color-accent-500), 0 0 160px var(--color-accent-550);
+}
+
+.glow:hover {
+  box-shadow: 0 0 20px var(--color-accent-400), 0 0 40px var(--color-accent-500),
+    0 0 80px var(--color-accent-500), 0 0 150px var(--color-accent-550);
 }
 
 .typewrite {
@@ -358,4 +364,7 @@
   width: 6px;
   background-color: var(--color-accent-400);
   animation: caret-blink 1s ease-in infinite;
+}
+
+.face-mask {
 }

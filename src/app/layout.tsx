@@ -5,6 +5,7 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import localFont from 'next/font/local'
 import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
 const myFont = localFont({
   src: '/Edensor.otf',
@@ -41,6 +42,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </body>
       </html>

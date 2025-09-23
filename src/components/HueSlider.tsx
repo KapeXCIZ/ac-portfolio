@@ -20,7 +20,7 @@ export default function HueSlider({
             <DropdownMenu>
                 <DropdownMenuTrigger className={className ? className : ""} asChild>
                     <Button variant="outline" size="icon" >
-                        <PaintBucketIcon weight="duotone" className="text-accent-600 dark:text-accent-300" />
+                        <PaintBucketIcon weight="duotone" className="text-accent-500 dark:text-accent-400" />
                         <span className="sr-only">Toggle theme color</span>
                     </Button>
                 </DropdownMenuTrigger>
