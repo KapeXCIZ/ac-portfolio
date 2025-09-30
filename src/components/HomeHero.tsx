@@ -12,7 +12,7 @@ export default function HomeHero() {
     return (
         <>
             <section className="container mx-auto flex items-center justify-center my-8 gap-10 px-6 h-[70vh] relative">
-                <span className="absolute w-full h-full bg-[url(/images/bg-logo-1.png)] bg-center brightness-5 dark:brightness-10 dark:md:brightness-8  invert dark:invert-0 mask-radial-[60%_60%] mask-radial-from-10% -z-5 " />
+                <span className="absolute w-full h-full bg-[url(/images/bg-logo-1.png)] bg-center brightness-5 dark:brightness-10   invert dark:invert-0 mask-radial-[60%_60%] mask-radial-from-10% -z-5 " />
                 <div className="flex flex-col gap-8 py-8 text-center ">
                     <span className="spotlight-text">
                         <h1 className="font-deco text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.125em] ">Hi, I&#39;m <span className="underline decoration-accent-400 decoration-[4px] underline-offset-8 hover:decoration-wavy ">Alessio Capecchi</span><br /><span className="font-serif text-accent-[--foreground]">Web <Typewrite phrases={["Developer.", "Wizard.", "Designer.", "Magician."]} period={170} id={1} /></span></h1>

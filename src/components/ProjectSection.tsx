@@ -15,7 +15,7 @@ export default function ProjectSection() {
         <span className="relative w-fit mx-auto flex justify-center items-center">
             <span className="absolute size-[90vw] sm:size-[70vw] max-w-[1000px] max-h-[1000px] md:size-[60vw] lg:size-[50vw]  bg-accent-500/25 left-1/5 top-1/2 -translate-x-1/3 -translate-y-1/2 rounded-full mask-radial-[50%_50%] mask-radial-from-0%  -z-50 hidden lg:block " />
             <section className=" my-10 lg:my-20 flex flex-col-reverse lg:grid lg:grid-cols-5 xl:grid-cols-4  bg-white/50 dark:bg-white/1 mx-5  px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-32  border-y gap-2 items-center justify-center relative mask-x-from-95% lg:mask-x-from-92% mask-x-to-100% max-w-[1800px]  ">
-                <Image src={"/images/project-image.png"} height={600} width={1000} alt="Example of a project" className="dark:brightness-90 brightness-100 col-span-2" />
+                <Image src={"/images/home/project-image.png"} height={600} width={1000} alt="Example of a project" className="dark:brightness-90 brightness-100 col-span-2" />
                 <div className="flex flex-col gap-3 items-center justify-center w-full  col-span-3 xl:col-span-2">
                     <p className="font-thin text-lg">Featured project</p>
                     <h1 className="text-center font-deco  tracking-tight  text-5xl md:text-6xl lg:text-7xl lg:leading-[4rem] ">A digital home for a<br /><span className="underline decoration-accent-400 decoration-[3px] underline-offset-8 hover:decoration-wavy">professional chef</span></h1>

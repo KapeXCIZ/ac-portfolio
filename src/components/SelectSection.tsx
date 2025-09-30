@@ -63,7 +63,7 @@ export default function SelectSection() {
                 <span className="absolute w-full h-2/3 lg:h-1/2 backdrop-blur-xl mask-to-t !z-[0] rounded-xl" />
                 <div className="!absolute !-z-30 top-3 inset-0 shadow-color">
                     <Image
-                        src="/images/dev-blur.jpg"
+                        src="/images/selection/dev-blur.jpg"
                         alt="photo blur"
                         fill
                         className="object-cover w-full h-full blur-md pointer-events-none -z-30 brightness-120 opacity-70"
@@ -82,7 +82,7 @@ export default function SelectSection() {
                 <span className="absolute w-full h-2/3 md:h-1/2 backdrop-blur-md mask-to-t !z-[0] rounded-xl" />
                 <div className="!absolute !-z-30 top-3 inset-0 shadow-color">
                     <Image
-                        src="/images/foto-blur.jpg"
+                        src="/images/selection/foto-blur.jpg"
                         alt="photo blur"
                         fill
                         className="object-cover w-full h-full blur-md pointer-events-none -z-30 brightness-80  opacity-70"
