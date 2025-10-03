@@ -25,7 +25,7 @@
 
   /* --hue: 310; */
 
-  --hue: 10;
+  --hue: 220;
 
   --radius: 1rem;
 
@@ -352,11 +352,33 @@ main {
 .glow {
   box-shadow: 0 0 20px var(--color-accent-300), 0 0 40px var(--color-accent-400),
     0 0 80px var(--color-accent-500), 0 0 160px var(--color-accent-550);
+  animation-name: glowAnim;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
 
 .glow:hover {
   box-shadow: 0 0 20px var(--color-accent-400), 0 0 40px var(--color-accent-500),
-    0 0 80px var(--color-accent-500), 0 0 150px var(--color-accent-550);
+    0 0 80px var(--color-accent-500), 0 0 150px var(--color-accent-550),
+    inset 0 0 30px white;
+}
+
+@keyframes glowAnim {
+  0% {
+    box-shadow: 0 0 20px var(--color-accent-300),
+      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-500),
+      0 0 160px var(--color-accent-550);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-accent-300),
+      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-450),
+      0 0 160px var(--color-accent-500), 0 0 200px var(--color-accent-500);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--color-accent-300),
+      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-500),
+      0 0 160px var(--color-accent-550);
+  }
 }
 
 .typewrite {
@@ -387,4 +409,64 @@ body::before {
   opacity: 0.06;
   mix-blend-mode: overlay;
   z-index: 50;
+}
+
+.solid-button {
+  position: relative;
+
+  z-index: 0;
+  overflow: hidden;
+  border: transparent;
+  transition-duration: 800ms;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(1turn);
+  }
+}
+
+.solid-button::before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  position: absolute;
+  width: 99999px;
+  height: 99999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  /*border color, change middle color*/
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    var(--color-accent-100),
+    rgba(0, 0, 0, 0) 35%
+  );
+  /* change speed here */
+  animation: rotate 3s linear infinite;
+}
+
+.solid-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  /* border width */
+  left: 2px;
+  top: 2px;
+  /* double the px from the border width left */
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background: var(--color-accent-450);
+  border-radius: inherit;
+  transition: inherit;
+}
+
+.solid-button:hover {
+  box-shadow: 0 0 30px var(--color-accent-400);
+  background-color: var(--color-accent-200);
+}
+.solid-button:hover::after {
+  background: var(--color-accent-500);
 }

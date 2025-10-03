@@ -11,7 +11,7 @@ import HueSlider from "../HueSlider";
 
 export default function Navbar() {
     const currPage = usePathname();
-    const [currentHue, setCurrentHue] = useState<number>(10);
+    const [currentHue, setCurrentHue] = useState<number>(220);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {

@@ -18,16 +18,16 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-row gap-2 justify-start md:justify-center text-2xl items-center  *:hover:text-foreground  *:transition-colors *:duration-300 *:ease-in-out order-1 md:order-2">
                     <Link href={"https://www.instagram.com/alessio_capecchi/"} >
-                        <InstagramLogoIcon />
+                        <InstagramLogoIcon weight="light" />
                     </Link>
-                    <Link href={"https://www.linkedin.com/in/alessio-capecchi-629a00270/"}>
-                        <LinkedinLogoIcon />
+                    <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
+                        <LinkedinLogoIcon weight="light" />
                     </Link>
                     <Link href={"https://github.com/KapeXCIZ"} >
-                        <GithubLogoIcon />
+                        <GithubLogoIcon weight="light" />
                     </Link>
                     <a href="mailto:alessio.capecchi.18@gmail.com">
-                        <EnvelopeSimpleIcon />
+                        <EnvelopeSimpleIcon weight="light" />
                     </a>
                 </div>
                 <div className="flex flex-row gap-1 items-center md:justify-end font-light order-3 col-span-2 ">
