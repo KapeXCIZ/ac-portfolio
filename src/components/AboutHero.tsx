@@ -57,7 +57,7 @@ export default function AboutHero() {
 
                 <div className={cn("relative isolate w-fit h-full justify-end items-start flex opacity-100 transition-opacity duration-300", !imageVisible ? "opacity-0" : "")}>
                     <Image src={"/images/about/2-blur.png"} width={20} height={30} alt="Thoughtful Alessio blur" loading="eager" className={cn("w-full md:h-[75vh] absolute px-4 blur-lg   transition-all duration-600  max-h-[800px]  brightness-115 dark:brightness-100  saturate-150 ", collapsed ? "opacity-0" : "opacity-75 dark:opacity-100")} />
-                    <Image src={"/images/about/2.png"} width={1000} height={1500} alt="Thoughtful Alessio" className={cn("w-full md:h-[75vh] px-4  bottom-0  saturate-100 transition-all duration-500  max-h-[800px]  brightness-115 dark:brightness-100  peer opacity-100", collapsed ? "opacity-0" : "")} />
+                    <Image src={"/images/about/2.png"} width={1000} height={1500} alt="Thoughtful Alessio" className={cn("w-full md:h-[75vh] px-4  bottom-0  saturate-100 transition-all duration-500 ease-in  max-h-[800px]  brightness-115 dark:brightness-100  peer opacity-100", collapsed ? "opacity-0" : "")} />
 
                     <span className={cn("w-[120%] h-[90%] bg-accent-450/20 dark:bg-accent-550/15 peer-hover:bg-accent-450/40 peer-hover:dark:bg-accent-550/35 ease-in-out transition duration-700 rounded-[100%] blur-[100px] absolute top-3/5 -translate-y-1/2 left-1/2 -translate-x-1/2  -z-10 ", collapsed ? "bg-accent-450/40 dark:bg-accent-550/35 blur-[140px]" : "")} />
                 </div>

@@ -243,11 +243,12 @@ main {
     var(--color-background),
     transparent
   );
-  transition: 0.3s cubic-bezier(0.13, 0.75, 0.83, 0.67);
+  transition: 0.6s cubic-bezier(0.13, 0.75, 0.83, 0.67);
 }
 
 .shine:hover::before {
   left: 110%;
+  transition: 0.9s cubic-bezier(0.13, 0.75, 0.83, 0.67)
 }
 
 .cubic {
