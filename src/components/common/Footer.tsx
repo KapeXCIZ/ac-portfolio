@@ -15,7 +15,7 @@ export default function Footer() {
 
     return (
         <>
-            <div className="w-full flex flex-col   gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6  text-foreground/50 justify-between">
+            <div className="w-full flex flex-col bg-background z-50  gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6  text-foreground/50 justify-between">
                 <div className=" flex flex-row gap-1 items-center font-light order-2 md:order-1 col-span-2">
                     <h1>ALESSIO CAPECCHI</h1>
                     <CopyrightIcon />
