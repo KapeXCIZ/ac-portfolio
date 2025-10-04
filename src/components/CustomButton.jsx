@@ -6,8 +6,7 @@ const variants = {
     ghost: "hover:bg-accent-500/10 dark:hover:bg-accent-400/20  hover:text-accent-800 dark:hover:text-accent-200 ",
     outline: "border  border-accent-400 hover:bg-accent-450 text-accent-400 hover:text-accent-100 ",
     glow: "bg-white dark:bg-foreground text-black hover:text-white dark:hover:bg-accent-400 hover:bg-accent-500 hover:border-accent-500/50 shadow-accent-500/50 hover:shadow-accent-550/50 glow",
-    solid: " text-white bg-accent-400 dark:bg-accent-500  solid-button ",
-
+    solid: " text-white bg-accent-400 dark:bg-accent-600  solid-button py-[10px] ",
 };
 
 export default function CustomButton({ children, className = "", variant = "glow", ...props }) {

@@ -1,12 +1,17 @@
-'use client'
+"use client";
 
-import { CopyrightIcon, EnvelopeSimpleIcon, GithubLogoIcon, InstagramLogoIcon, LinkedinLogoIcon, SparkleIcon } from "@phosphor-icons/react"
+import {
+    CopyrightIcon,
+    EnvelopeSimpleIcon,
+    GithubLogoIcon,
+    InstagramLogoIcon,
+    LinkedinLogoIcon,
+    SparkleIcon,
+} from "@phosphor-icons/react";
 import Link from "next/link";
-
 
 export default function Footer() {
     const date = new Date();
-
 
     return (
         <>
@@ -17,13 +22,13 @@ export default function Footer() {
                     <h1>{date.getFullYear()}</h1>
                 </div>
                 <div className="flex flex-row gap-2 justify-start md:justify-center text-2xl items-center  *:hover:text-foreground  *:transition-colors *:duration-300 *:ease-in-out order-1 md:order-2">
-                    <Link href={"https://www.instagram.com/alessio_capecchi/"} >
+                    <Link href={"https://www.instagram.com/alessio_capecchi/"}>
                         <InstagramLogoIcon weight="light" />
                     </Link>
                     <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
                         <LinkedinLogoIcon weight="light" />
                     </Link>
-                    <Link href={"https://github.com/KapeXCIZ"} >
+                    <Link href={"https://github.com/KapeXCIZ"}>
                         <GithubLogoIcon weight="light" />
                     </Link>
                     <a href="mailto:alessio.capecchi.18@gmail.com">
@@ -37,5 +42,5 @@ export default function Footer() {
                 </div>
             </div>
         </>
-    )
+    );
 }

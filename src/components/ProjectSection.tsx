@@ -20,7 +20,7 @@ export default function ProjectSection() {
                     <p className="font-thin text-lg">Featured project</p>
                     <h1 className="text-center font-deco  tracking-tight  text-5xl md:text-6xl lg:text-7xl lg:leading-[4rem] ">A digital home for a<br /><span className="underline decoration-accent-400 decoration-[3px] underline-offset-8 hover:decoration-wavy">professional chef</span></h1>
                     <p className="text-xl  lg:text-2xl  font-light mt-3 px-0 md:px-6 text-center">With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.</p>
-                    <div className="flex gap-2 mt-3 md:*:text-sm flex-wrap items-center justify-center  *:bg-white/60 dark:*:bg-white/0 z-1">
+                    <div className="flex gap-2 mt-3 md:*:text-sm flex-wrap items-center justify-center  *:bg-white/0 dark:*:bg-white/0 *:border-gray-500/50 dark:*:border-white/15 z-1">
                         <Badge variant="outline">HTML</Badge>
                         <Badge variant="outline">CSS</Badge>
                         <Badge variant="outline">Javascript</Badge>
