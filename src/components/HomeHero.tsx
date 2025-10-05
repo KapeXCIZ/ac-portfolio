@@ -17,8 +17,8 @@ export default function HomeHero() {
 
                     <div className="flex flex-col gap-8 py-8 text-center ">
                         <span className="spotlight-text z-1">
-                            <h1 className="font-deco text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.125em] relative text-foreground"><span className="relative">Hi</span>, I&#39;m <span className="underline decoration-accent-400 decoration-[4px] underline-offset-8 hover:decoration-wavy ">Alessio Capecchi</span><br /><span className="font-serif text-accent-[--foreground]">Web <Typewrite phrases={["Developer.", "Wizard.", "Designer.", "Magician."]} period={170} id={1} /></span></h1>
-                            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[200]">I build <span className="font-thin ">clean</span>, <span className="italic">fast</span>, <span className="font-[400]">user-focused</span> web applications</h2>
+                            <h1 className="font-deco text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.125em] relative text-foreground"><span className="relative">Hi</span>, I&#39;m <span className="underline decoration-accent-400 decoration-[4px] underline-offset-8 hover:decoration-wavy ">Alessio Capecchi</span><br /><span className="font-serif text-accent-[--foreground]">Web<Typewrite phrases={[" Developer.", " Wizard.", " Designer.", " Magician."]} period={175} id={1} /></span></h1>
+                            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[200]">I build <span className="font-thin">clean</span>, <span className="italic  text-foreground">fast</span>, <span className="font-[400]">user-focused</span> web applications</h2>
                         </span>
                         <div className="w-full flex justify-center items-center gap-4 pt-4 *:text-xl *:z-0">
                             <Link href={"/projects"} >

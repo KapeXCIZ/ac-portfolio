@@ -22,7 +22,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: contain;
   
   /* --hue: 310; */
 
@@ -33,6 +34,8 @@
   --radius: 1rem;
 
   --background: oklch(1 0 0);
+
+  --background-2: oklch(.98 0 0);
 
   --foreground: oklch(0.145 0 0);
 
@@ -93,6 +96,13 @@
   --sidebar-border: oklch(0.922 0 0);
 
   --sidebar-ring: oklch(0.708 0 0);
+
+
+  --glow:0 0 20px color-mix(in srgb,var(--color-accent-400) 50%, transparent), 0 0 40px color-mix(in srgb,var(--color-accent-500) 50%, transparent),
+    0 0 80px color-mix(in srgb,var(--color-accent-500) 50%, transparent);
+
+  --glow-exp: 0 0 20px color-mix(in srgb,var(--color-accent-400) 70%, transparent), 0 0 40px color-mix(in srgb,var(--color-accent-500) 80%, transparent),
+    0 0 80px color-mix(in srgb,var(--color-accent-600) 90%, transparent);
 }
 
 @theme {
@@ -121,6 +131,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-background: var(--background);
+  --color-background-2: var(--background-2);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -155,6 +166,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
+    --background-2: oklch(0.18 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -185,6 +197,11 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+    --glow:0 0 20px var(--color-accent-300), 0 0 40px var(--color-accent-400),
+    0 0 80px var(--color-accent-500), 0 0 160px var(--color-accent-550);
+  --glow-exp:0 0 20px var(--color-accent-300),
+      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-450),
+      0 0 160px var(--color-accent-500), 0 0 200px var(--color-accent-500);
 }
 
 @layer base {
@@ -354,36 +371,24 @@ main {
 }
 
 .glow {
-  box-shadow: 0 0 20px var(--color-accent-300), 0 0 40px var(--color-accent-400),
-    0 0 80px var(--color-accent-500), 0 0 160px var(--color-accent-550);
+  box-shadow: var(--glow);
   animation-name: glowAnim;
   animation-duration: 6s;
   animation-iteration-count: infinite;
 }
 
-.glow:hover {
-  box-shadow: 0 0 20px var(--color-accent-400), 0 0 40px var(--color-accent-500),
-    0 0 80px var(--color-accent-500), 0 0 150px var(--color-accent-550),
-    inset 0 0 30px white;
-}
 
 
 
 @keyframes glowAnim {
   0% {
-    box-shadow: 0 0 20px var(--color-accent-300),
-      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-500),
-      0 0 160px var(--color-accent-550);
+    box-shadow: var(--glow);
   }
   50% {
-    box-shadow: 0 0 20px var(--color-accent-300),
-      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-450),
-      0 0 160px var(--color-accent-500), 0 0 200px var(--color-accent-500);
+    box-shadow: var(--glow-exp);
   }
   100% {
-    box-shadow: 0 0 20px var(--color-accent-300),
-      0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-500),
-      0 0 160px var(--color-accent-550);
+    box-shadow: var(--glow);
   }
 }
 
@@ -487,22 +492,7 @@ left: 2px;
 }
 
 
-.handAnim{
-  animation-name: hi;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
 
-@keyframes hi{
-  0%{
-    transform: rotate3d(0,0,0,0);
-  }
-  50%{transform: rotate3d(0, -1, 1,30deg);}
-  100%{
-    transform: rotate3d(0,0,0,0);
-  }
-}
 
 .runner{
     animation-duration: 25s;
@@ -544,3 +534,5 @@ left: 2px;
 .strokeme{
    -webkit-text-stroke: 1px color-mix(in srgb, var(--color-foreground) 30%, transparent);
 }
+
+

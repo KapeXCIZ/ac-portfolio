@@ -6,7 +6,7 @@ import { CaretDoubleDownIcon } from "@phosphor-icons/react";
 
 export default function AboutContent() {
     return (
-        <div className="w-full   bg-secondary backdrop-blur-2xl   z-0 border-t  px-10 md:px-16 lg:px-20 rounded-t-[4em] md:rounded-t-[6em] lg:rounded-t-[8em] xl:rounded-t-[10em] py-10 pt-10 flex items-center justify-center gap-8 flex-col mx-auto ">
+        <div className="w-full  bg-background-2 backdrop-blur-2xl border-t  z-0   px-10 md:px-16 lg:px-20 rounded-t-[4em] md:rounded-t-[6em] lg:rounded-t-[8em] xl:rounded-t-[10em] py-10 pt-10 flex items-center justify-center gap-8 flex-col mx-auto ">
             <div className="container ">
                 <CaretDoubleDownIcon className="text-5xl mx-auto opacity-30 mb-22 xl:mb-30 animate-bounce animation-duration-[2.5s]" />
                 <section className="flex gap-4 flex-col pb-16">
