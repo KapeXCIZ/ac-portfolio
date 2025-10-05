@@ -60,7 +60,7 @@ export default function SelectSection() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-deco group-hover:tracking-widest transition-all ease-spring duration-(--spring-duration) text-white text-shadow text-nowrap">WEBSITES <br className="block sm:hidden lg:block" />AND APPS</h2>
                     <p className="text-xl leading-tight md:text-2xl  text-white lg:text-white/0 group-hover:text-shadow transition ease-spring duration-(--spring-duration) group-hover:text-white ">Clean code, Sharp pixels and User-first thinking.</p>
                 </span>
-                <span className="absolute w-full h-2/3 lg:h-1/2 backdrop-blur-xl mask-to-t !z-[0] rounded-xl" />
+                <span className="absolute w-full h-2/3 lg:h-1/2 backdrop-blur-xl mask-to-t !z-[0] rounded-2xl" />
                 <div className="!absolute !-z-30 top-3 inset-0 shadow-color">
                     <Image
                         src="/images/selection/dev-blur.jpg"
@@ -79,7 +79,7 @@ export default function SelectSection() {
                     <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-deco group-hover:tracking-widest transition-all ease-spring duration-(--spring-duration) text-white text-shadow">PHOTOGRAPHY</h2>
                     <p className="text-xl leading-tight md:text-2xl  text-white lg:text-white/0 group-hover:text-shadow transition ease-spring duration-(--spring-duration) group-hover:text-white">A visual journey through light, detail, and perspective.</p>
                 </span >
-                <span className="absolute w-full h-2/3 md:h-1/2 backdrop-blur-md mask-to-t !z-[0] rounded-xl" />
+                <span className="absolute w-full h-2/3 md:h-1/2 backdrop-blur-md mask-to-t !z-[0] rounded-2xl" />
                 <div className="!absolute !-z-30 top-3 inset-0 shadow-color">
                     <Image
                         src="/images/selection/foto-blur.jpg"
