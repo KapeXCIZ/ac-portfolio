@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function AboutTeaser() {
     return (
-        <section className="container mx-auto my-50 flex justify-center items-center flex-col gap-8 relative">
+        <section className="container mx-auto my-80 flex justify-center items-center flex-col gap-8 relative">
             <span className="absolute w-[1200px] h-[600px] max-w-[96vw]   bg-accent-500/25 object-center rounded-full mask-radial-[50%_50%] mask-radial-from-0%  -z-50" />
 
             <Image src={"/images/home/siluette.png"} height={200} width={200} alt="Alessio's siluette" className="w-[240px] mask-b-from-50% mask-b-to-90%  brightness-0 invert dark:invert-0 -top-28   absolute " />

@@ -103,12 +103,15 @@
 
   --glow-exp: 0 0 20px color-mix(in srgb,var(--color-accent-400) 70%, transparent), 0 0 40px color-mix(in srgb,var(--color-accent-500) 80%, transparent),
     0 0 80px color-mix(in srgb,var(--color-accent-600) 90%, transparent);
+
+    --rotation-spinner: 0deg;
 }
 
 @theme {
   --default-font-family: var(--font-geist-sans);
   --default-mono-font-family: var(--font-geist-mono);
   --font-deco: var(--font-deco);
+  --font-serif: "Georgia", "Cambria", "Times New Roman";
   --color-accent-100: oklch(99% 0.05 var(--hue));
   --color-accent-200: oklch(90% 0.1 var(--hue));
   --color-accent-300: oklch(80% 0.2 var(--hue));
@@ -377,7 +380,12 @@ main {
   animation-iteration-count: infinite;
 }
 
-
+.glow-text {
+  text-shadow: var(--glow);
+  animation-name: glowAnimText;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
 
 
 @keyframes glowAnim {
@@ -391,6 +399,7 @@ main {
     box-shadow: var(--glow);
   }
 }
+
 
 .typewrite {
   position: relative;
@@ -536,3 +545,27 @@ left: 2px;
 }
 
 
+.rotate-on-scroll{
+  transform: rotate(var(--rotation-spinner));
+}
+
+.rotate-on-scroll.reverse{
+    transform: rotate(calc(var(--rotation-spinner)*-1));
+}
+
+@keyframes bg-anim {
+  0% {
+    background-position: right 0px top 0px;
+  }
+  100% {
+    background-position: right 219px top 363px;
+  }
+}
+
+.bg-animation{
+  animation-name: bg-anim;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 12s;
+
+}
