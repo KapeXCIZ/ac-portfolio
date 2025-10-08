@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import HueSlider from "../HueSlider";
-import { EnvelopeSimpleIcon, GithubLogoIcon, InstagramLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className={cn("py-4 px-0 mx:px-4 sticky h-[80px] top-0 z-50 duration-[.8s] border-b border-transparent transition-all", isScrolled ? "backdrop-blur-lg bg-background/65 border-white-400/25 shadow-2xl dark:shadow-accent-600/15 shadow-accent-400/10" : "")}>
+            <nav className={cn("py-4 px-0 mx:px-4 sticky h-[80px] top-0 z-50 duration-[.8s] border-b border-transparent transition-all overscroll-none", isScrolled ? "backdrop-blur-lg bg-background/65 border-white-400/25 shadow-2xl dark:shadow-accent-600/15 shadow-accent-400/10" : "")}>
                 <div className="h-full flex grid-cols-3 container justify-between relative items-center w-full  mx-auto z-50 px-4" >
                     <Link href={"/"} className="h-3/4 shine active:*:shadow flex-initial basis-3xs">
                         <Logo className="h-full" />
@@ -58,9 +58,6 @@ export default function Navbar() {
                     </div>
                     <span className="flex justify-end items-center flex-initial basis-3xs">
                         <div className=" justify-center items-center text-xl  me-3 hidden lg:flex  *:hover:bg-foreground/10 *:tarnsition *:duration-300 *:p-1 dark:*:hover:text-accent-200 *:rounded-full">
-                            <Link href={"https://www.instagram.com/alessio_capecchi/"} >
-                                <InstagramLogoIcon />
-                            </Link>
                             <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
                                 <LinkedinLogoIcon />
                             </Link>
@@ -76,7 +73,7 @@ export default function Navbar() {
                     </span>
 
                 </div >
-            </div >
+            </nav >
 
 
         </>

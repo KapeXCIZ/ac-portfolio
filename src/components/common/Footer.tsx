@@ -4,7 +4,6 @@ import {
     CopyrightIcon,
     EnvelopeSimpleIcon,
     GithubLogoIcon,
-    InstagramLogoIcon,
     LinkedinLogoIcon,
     SparkleIcon,
 } from "@phosphor-icons/react";
@@ -15,16 +14,16 @@ export default function Footer() {
 
     return (
         <>
-            <div className="w-full flex flex-col  z-50  gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6  text-foreground/50 justify-between">
+            <footer className="w-full flex flex-col  z-50  gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6 relative text-foreground/50 justify-between">
+                <span className="w-full left-0 h-[180%] bottom-0 mask-t-from-0% absolute opacity-10 -z-20">
+                    <span className="w-full left-0 h-full bottom-0 bg-circuit absolute    " />
+                </span>
                 <div className=" flex flex-row gap-1 items-center font-light order-2 md:order-1 col-span-2">
                     <h1>ALESSIO CAPECCHI</h1>
                     <CopyrightIcon />
                     <h1>{date.getFullYear()}</h1>
                 </div>
                 <div className="flex flex-row gap-2 justify-start md:justify-center text-2xl items-center  *:hover:text-foreground  *:transition-colors *:duration-300 *:ease-in-out order-1 md:order-2">
-                    <Link href={"https://www.instagram.com/alessio_capecchi/"}>
-                        <InstagramLogoIcon weight="light" />
-                    </Link>
                     <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
                         <LinkedinLogoIcon weight="light" />
                     </Link>
@@ -40,7 +39,7 @@ export default function Footer() {
                     <SparkleIcon />
                     <h1>ALESSIO CAPECCHI</h1>
                 </div>
-            </div>
+            </footer>
         </>
     );
 }

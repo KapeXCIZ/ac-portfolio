@@ -40,8 +40,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main>
-              <Navbar />
+            <Navbar />
+            <main className="overscroll-auto">
               {children}
             </main>
             <Footer />

@@ -14,10 +14,9 @@ export default function HomeHero() {
             <section className=" mx-auto flex items-center justify-center my-8 gap-10 px-6 h-[70vh] relative">
                 <span className="absolute w-full h-full bg-[url(/images/bg-logo-1.png)] bg-animation brightness-5 dark:brightness-10 opacity-70   invert dark:invert-0 mask-radial-[50%_60%] mask-radial-from-10% -z-5 " />
                 <div className="container mx-auto">
-
                     <div className="flex flex-col gap-8 py-8 text-center ">
                         <span className="spotlight-text z-1">
-                            <h1 className="font-deco text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.125em] relative text-foreground"><span className="relative">Hi</span>, I&#39;m <span className="underline decoration-accent-400 text-foreground hover:text-transparent transition-colors duration-200 decoration-[4px] underline-offset-8  [-webkit-text-stroke:_1px_color-mix(in_srgb,_var(--color-foreground)_100%,_transparent)] relative group"><span className="relative">Alessio<StarFourIcon weight="fill" className="absolute text-foreground text-[10px] md:text-[12px] lg:text-[14px] group-hover:opacity-0 sm:bottom-[34%]  md:bottom-[34%] lg:bottom-[38px] transition-opacity duration-200 ease-in-out sm:left-[138px] md:left-[165px] lg:-translate-y-1/5  lg:left-[222px] hidden sm:block" /><StarFourIcon weight="light" className="absolute text-foreground text-[10px] md:text-[12px] lg:text-[14px] opacity-0 group-hover:opacity-100 sm:bottom-[34%]  md:bottom-[34%] lg:bottom-[38px] transition-opacity duration-200 ease-in-out sm:left-[138px] md:left-[165px] lg:-translate-y-1/5  lg:left-[222px] hidden sm:block" /></span> Capecchi</span><br /><span className="font-serif text-accent-[--foreground]">Web<Typewrite phrases={[" Developer.", " Wizard.", " Designer.", " Magician."]} period={175} id={1} /></span></h1>
+                            <h1 className="font-deco text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.125em] relative text-foreground"><span className="relative">Hi</span>, I&#39;m <span className="underline   decoration-accent-400 text-foreground hover:text-transparent transition-colors duration-200 decoration-[4px] underline-offset-8  [-webkit-text-stroke:_1px_color-mix(in_srgb,_var(--color-foreground)_100%,_transparent)] relative group"><span className="relative">Alessio<StarFourIcon weight="fill" className="absolute text-foreground text-[10px] md:text-[12px] lg:text-[14px] group-hover:opacity-0 sm:bottom-[34%]  md:bottom-[34%] lg:bottom-[38px] transition-opacity duration-200 ease-in-out sm:left-[138px] md:left-[165px] lg:-translate-y-1/5  lg:left-[222px] hidden sm:block" /><StarFourIcon weight="light" className="absolute text-foreground text-[10px] md:text-[12px] lg:text-[14px] opacity-0 group-hover:opacity-100 sm:bottom-[34%]  md:bottom-[34%] lg:bottom-[38px] transition-opacity duration-200 ease-in-out sm:left-[138px] md:left-[165px] lg:-translate-y-1/5  lg:left-[222px] hidden sm:block" /></span> Capecchi</span><br /><span className="font-serif text-accent-[--foreground]">Web<Typewrite phrases={[" Developer.", " Wizard.", " Designer.", " Magician."]} period={175} id={1} /></span></h1>
                             <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-[200]">I build <span className="font-thin">clean</span>, <span className="italic  text-foreground">fast</span>, <span className="font-[400]">user-focused</span> web applications</h2>
                         </span>
                         <div className="w-full flex justify-center items-center gap-4 pt-4 *:text-xl *:z-0">
@@ -30,7 +29,6 @@ export default function HomeHero() {
                         </div>
                     </div>
                 </div>
-
             </section>
         </>
     )

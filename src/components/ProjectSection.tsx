@@ -37,7 +37,7 @@ export default function ProjectSection() {
 
             <section className="bg-white/50 dark:bg-white/1 mx-5  px-4 md:px-8 lg:px-16 py-12  border-y  relative mask-x-from-95% lg:mask-x-from-92% mask-x-to-100% max-w-[1800px]  ">
                 <Runner className="strokeme" words={runnerUp} />
-                <div className="my-0 flex flex-col-reverse lg:grid lg:grid-cols-5 xl:grid-cols-4 gap-2 items-center justify-center">
+                <div className="my-0 flex flex-col-reverse lg:grid lg:grid-cols-5 xl:grid-cols-4 gap-6 items-center justify-center">
 
                     <Image src={"/images/home/project-image.png"} height={600} width={1000} alt="Example of a project" className="dark:brightness-90 brightness-100 col-span-2" />
                     <div className="flex flex-col gap-3 items-center justify-center w-full mt-4 lg:mt-0  col-span-3 xl:col-span-2">
