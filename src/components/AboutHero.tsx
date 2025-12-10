@@ -56,10 +56,10 @@ export default function AboutHero() {
                 </div>
 
                 <div className={cn("relative isolate w-full h-full  opacity-100 transition-opacity duration-300 ", !imageVisible ? "opacity-0" : "")}>
-                    <Image src={"/images/about/2.png"} width={1000} height={1500} alt="Thoughtful Alessio" className={cn(" md:h-[75vh] px-4 absolute w-fit left-1/2  -translate-x-1/2 top-1/2  -translate-y-1/2  saturate-100 transition-all duration-500 ease-in  max-h-[800px]  brightness-115 dark:brightness-100   peer opacity-100 z-10", collapsed ? "opacity" : "")} />
-                    <Image src={"/images/about/2-blur.png"} width={20} height={30} alt="Thoughtful Alessio blur" loading="eager" className={cn(" md:h-[75vh] absolute px-4    transition-all  w-fit left-1/2 -translate-x-1/2 top-1/2  -translate-y-1/2 duration-800  max-h-[800px]  brightness-115 dark:brightness-100 ease-in-out  saturate-150 blur-xl peer-hover:blur-3xl", collapsed ? "opacity-0" : "opacity-75 dark:opacity-100")} />
+                    <Image src={"/images/about/1.png"} width={1000} height={1500} alt="Thoughtful Alessio" className={cn(" md:h-[75vh] px-4 absolute w-fit left-1/2  -translate-x-1/2 top-1/2  -translate-y-1/2  saturate-100 transition-all duration-500 ease-in  max-h-[800px]  brightness-115 dark:brightness-100   peer opacity-100 z-10", collapsed ? "opacity" : "")} />
+                    <Image src={"/images/about/1-blur.png"} width={20} height={30} alt="Thoughtful Alessio blur" loading="eager" className={cn(" md:h-[75vh] absolute px-4    transition-all  w-fit left-1/2 -translate-x-1/2 top-1/2  -translate-y-1/2 duration-800  max-h-[800px]  brightness-115 dark:brightness-100 ease-in-out  saturate-150 blur-xl peer-hover:blur-3xl", collapsed ? "opacity-0" : "opacity-75 dark:opacity-100")} />
 
-                    <span className={cn("w-[65%] max-w-[500px] h-[80%] bg-accent-450/20 dark:bg-accent-550/15 peer-hover:bg-accent-450/40  peer-hover:dark:bg-accent-550/35 ease-in-out transition duration-700 rounded-[100%] blur-[100px] absolute top-3/5 -translate-y-1/2 left-1/2 -translate-x-1/2  -z-10 ", collapsed ? "bg-accent-450/40 dark:bg-accent-550/35 blur-[140px]" : "")} />
+                    <span className={cn("w-[65%] max-w-[500px] h-[80%] bg-accent-450/20 dark:bg-accent-550/15  ease-in-out transition duration-700 rounded-[100%] blur-[100px] absolute top-3/5 -translate-y-1/2 left-1/2 -translate-x-1/2  -z-10 ", collapsed ? "bg-accent-450/40 dark:bg-accent-550/35 blur-[140px]" : "")} />
                 </div>
             </div>
         </div>

@@ -15,8 +15,10 @@ export default function Footer() {
     return (
         <>
             <footer className="w-full flex flex-col  z-50  gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6 relative text-foreground/50 justify-between">
-                <span className="w-full left-0 h-[180%] bottom-0 mask-t-from-0% absolute opacity-10 -z-20">
-                    <span className="w-full left-0 h-full bottom-0 bg-circuit absolute    " />
+                <span className="w-full left-0 h-[200%] bottom-0 absolute opacity-35 dark:opacity-60   -z-20 reveal-bg">
+                    <span className="w-full left-0 h-[100%] bottom-0  absolute   -z-20 overflow-hidden ">
+                        <span className="w-full left-0 h-full bottom-0 bg-topography absolute    " />
+                    </span>
                 </span>
                 <div className=" flex flex-row gap-1 items-center font-light order-2 md:order-1 col-span-2">
                     <h1>ALESSIO CAPECCHI</h1>
