@@ -6,16 +6,12 @@ import { GeistMono } from 'geist/font/mono'
 import localFont from 'next/font/local'
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
-import { Bodoni_Moda } from "next/font/google";
 
 const myFont = localFont({
 	src: '/Edensor.otf',
 	variable: "--font-deco"
 })
 
-const bodoni = Bodoni_Moda({
-	variable: "--font-bodoni"
-});
 
 
 
@@ -36,7 +32,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<>
-			<html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${myFont.variable} ${bodoni.variable}`}>
+			<html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${myFont.variable}`}>
 				<head >
 					<meta name="apple-mobile-web-app-title" content="AC" />
 				</head>
