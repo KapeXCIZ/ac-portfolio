@@ -1,9 +1,10 @@
-import Hero from "@/components/Hero";
+import ProjectsHero from "@/components/ProjectsHero";
+
 
 export default function ProjectsPage() {
     return (
         <>
-            <Hero />
+            <ProjectsHero />
         </>
     )
 };

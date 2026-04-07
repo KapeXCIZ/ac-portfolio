@@ -42,9 +42,9 @@ export default function ProjectSection() {
                     <Image src={"/images/home/project-image.png"} height={600} width={1000} alt="Example of a project" className="dark:brightness-90 brightness-100 col-span-2" />
                     <div className="flex flex-col gap-3 items-center justify-center w-full mt-4 lg:mt-0  col-span-3 xl:col-span-2">
                         <p className="font-thin text-lg flex flex-row gap-2 items-center "><StarFourIcon weight="thin" className="rotate-on-scroll" /> Featured project <StarFourIcon weight="thin" className="rotate-on-scroll reverse" /></p>
-                        <h1 className="text-center font-deco  tracking-tight  text-5xl md:text-6xl lg:text-7xl lg:leading-[4rem] ">A digital home for a<br /><span className="underline decoration-accent-400 decoration-[3px] underline-offset-8 hover:decoration-wavy">professional chef</span></h1>
+                        <h1 className="text-center font-deco  tracking-tight  text-5xl md:text-6xl lg:text-7xl lg:leading-16 ">A digital home for a<br /><span className="underline decoration-accent-400 decoration-[3px] underline-offset-8 hover:decoration-wavy">professional chef</span></h1>
                         <p className="text-xl  lg:text-2xl  font-light mt-3 px-0 md:px-6 text-center">With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.</p>
-                        <div className="flex gap-2 mt-3 md:*:text-sm flex-wrap items-center justify-center  *:bg-white/0 dark:*:bg-white/0 *:border-foreground/15 dark:*:border-white/15 z-1">
+                        <div className="flex gap-2 mt-3 md:*:text-sm *:text-primary/70 flex-wrap items-center justify-center  *:bg-white/0 dark:*:bg-white/0 *:border-foreground/15 dark:*:border-white/15 z-1">
                             <Badge variant="outline">HTML</Badge>
                             <Badge variant="outline">CSS</Badge>
                             <Badge variant="outline">Javascript</Badge>

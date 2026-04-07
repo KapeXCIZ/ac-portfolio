@@ -1,9 +1,13 @@
-import SelectSection from "@/components/SelectSection";
+import AboutTeaser from "@/components/AboutTeaser";
+import HomeHero from "@/components/HomeHero";
+import ProjectSection from "@/components/ProjectSection";
 
 export default function Home() {
     return (
         <>
-            <SelectSection />
+            <HomeHero />
+            <ProjectSection />
+            <AboutTeaser />
         </>
     );
 }

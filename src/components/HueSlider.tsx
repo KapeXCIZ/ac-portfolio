@@ -17,7 +17,7 @@ export default function HueSlider({
 }) {
     return (
         <>
-            <DropdownMenu>
+            <DropdownMenu modal={false}>
                 <DropdownMenuTrigger className={className ? className : ""} asChild>
                     <Button variant="outline" size="icon" >
                         <PaintBucketIcon weight="duotone" className="text-accent-500 dark:text-accent-400" />

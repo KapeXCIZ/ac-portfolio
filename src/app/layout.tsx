@@ -25,11 +25,15 @@ export const metadata: Metadata = {
 	},
 };
 
+
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+
+
+
 	return (
 		<>
 			<html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable} ${myFont.variable}`}>
@@ -44,7 +48,7 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						<Navbar />
-						<main className="overscroll-auto">
+						<main className="overscroll-auto mt-20">
 							{children}
 						</main>
 						<Footer />
