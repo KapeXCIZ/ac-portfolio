@@ -46,6 +46,21 @@
     "projects": {
         "hero": {
             "h1": "Online Websites"
+        },
+        "common": {
+            "featured": "Featured project",
+            "b1": "View",
+            "b2": "Contact Me"
+        },
+        "project1": {
+            "h1": "A digital home for a",
+            "h2": "professional chef",
+            "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch."
+        },
+        "project2": {
+            "h1": "Casa digitale per uno",
+            "h2": "turist guide",
+            "desc": "Con un design pulito e reattivo, il sito si adatta a qualsiasi dispositivo, consentendo ai clienti di esplorare facilmente i servizi ed entrare in contatto."
         }
     }
 }

@@ -209,7 +209,7 @@ html {
   --glow-exp: 0 0 20px var(--color-accent-300),
     0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-450),
     0 0 160px var(--color-accent-500), 0 0 200px var(--color-accent-500);
-  --glow-sub: 0 0 20px color-mix(in srgb, var(--color-accent-400) 50%, transparent), 0 0 40px color-mix(in srgb, var(--color-accent-500) 10%, transparent);
+  --glow-sub: 0 0 20px color-mix(in srgb, var(--color-accent-400) 25%, transparent), 0 0 40px color-mix(in srgb, var(--color-accent-500) 20%, transparent);
 }
 
 @layer base {
