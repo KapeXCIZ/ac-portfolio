@@ -13,7 +13,7 @@ type SelectCardSubComponent = {
 
 const SelectCard: React.FC<SelectCardProps> & SelectCardSubComponent = ({ children, ...props }) => {
     return (
-        <div className="group min-w-0 overflow-hidden h-full w-full flex flex-col justify-start gap-4 bg-accent-200 dark:bg-accent-800  flex-[1] transition-[flex] hover:flex-[2] rounded-4xl ease-spring duration-(--spring-duration) p-10 relative " {...props}>
+        <div className="group min-w-0 overflow-hidden h-full w-full flex flex-col justify-start gap-4 bg-accent-200 dark:bg-accent-800  flex-1 transition-[flex] hover:flex-2 rounded-4xl ease-spring duration-(--spring-duration) p-10 relative " {...props}>
             {children}
         </div>
     );

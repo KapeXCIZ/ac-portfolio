@@ -1,5 +1,5 @@
 'use client'
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 // import { Badge } from "./ui/badge";
 import { CaretDoubleDownIcon /*, CompassToolIcon, DatabaseIcon*/ } from "@phosphor-icons/react";
 // import { ReactIcon } from "./icons/ReactIcon";

@@ -1,0 +1,51 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Progetti",
+        "about": "Chi sono",
+        "links": "Links"
+    },
+    "home": {
+        "homeHero": {
+            "r1": "Hai bisogno di un ",
+            "r11": "sito web?",
+            "r2": "Siti vetrina per ",
+            "typewrite": {
+                "1": "ristoranti",
+                "2": "studi",
+                "3": "negozi",
+                "4": "artigiani"
+            },
+            "r3": {
+                "1": "Semplice, Veloce, Tuo.",
+                "2": "",
+                "3": "",
+                "4": "",
+                "5": ""
+            }
+        },
+        "project": {
+            "featured": "Vetrina",
+            "h1": "Casa digitale per uno",
+            "h2": "chef professionale",
+            "desc": "Con un design pulito e reattivo, il sito si adatta a qualsiasi dispositivo, consentendo ai clienti di esplorare facilmente i servizi ed entrare in contatto.",
+            "view": "Guarda",
+            "projects": "Progetti"
+        },
+        "teaser": {
+            "r1": "Pronto a portare la tua attività online?",
+            "r2": "Un sito professionale, senza complicazioni.",
+            "b1": "Contattami",
+            "b2": "Guarda i miei progetti"
+        },
+        "context": {
+            "text": "Are you a developer? Here's my ",
+            "button": "Technical Portfolio"
+        }
+    },
+    "projects": {
+        "hero": {
+            "h1": "Siti Online"
+        }
+    }
+}

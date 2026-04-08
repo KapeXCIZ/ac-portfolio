@@ -1,0 +1,51 @@
+{
+    "navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "links": "Links"
+    },
+    "home": {
+        "homeHero": {
+            "r1": "Hi, I'm ",
+            "r11": "Alessio Capecchi",
+            "r2": "Web ",
+            "typewrite": {
+                "1": "Developer",
+                "2": "Wizard",
+                "3": "Designer",
+                "4": "Magician"
+            },
+            "r3": {
+                "1": "I build ",
+                "2": "clean ",
+                "3": "fast, ",
+                "4": "user-focused ",
+                "5": "web applications"
+            }
+        },
+        "project": {
+            "featured": "Featured project",
+            "h1": "A digital home for a",
+            "h2": "professional chef",
+            "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.",
+            "view": "View",
+            "projects": "Projects"
+        },
+        "teaser": {
+            "r1": "Behind every project there's curiosity, dedication, and a journey in progress.",
+            "r2": "Discover who I am and what drives me to create.",
+            "b1": "Contact me",
+            "b2": "CV"
+        },
+        "context": {
+            "text": "Stavi cercando i miei servizi di design?",
+            "button": "Clicca qui!"
+        }
+    },
+    "projects": {
+        "hero": {
+            "h1": "Online Websites"
+        }
+    }
+}

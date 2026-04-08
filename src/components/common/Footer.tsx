@@ -7,19 +7,21 @@ import {
     LinkedinLogoIcon,
     SparkleIcon,
 } from "@phosphor-icons/react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import ContextualLink from "../ContextualLink";
 
 export default function Footer() {
     const date = new Date();
 
     return (
         <>
+            <ContextualLink />
             <footer className="w-full flex flex-col  z-50  gap-2 md:gap-1 md:grid md:grid-cols-5 py-4 px-6 relative text-foreground/50 justify-between">
-                <span className="w-full left-0 h-[150%] bottom-0 absolute opacity-25 dark:opacity-30   -z-20 reveal-bg">
+                {/* <span className="w-full left-0 h-[150%] bottom-0 absolute opacity-25 dark:opacity-30 pointer-events-none  -z-20 reveal-bg">
                     <span className="w-full left-0 h-full bottom-0  absolute   -z-20 overflow-hidden ">
                         <span className="w-full left-0 h-full bottom-0 bg-topography absolute" />
                     </span>
-                </span>
+                </span> */}
                 <div className=" flex flex-row gap-1 items-center font-light order-2 md:order-1 col-span-2">
                     <h1>ALESSIO CAPECCHI</h1>
                     <CopyrightIcon />
@@ -32,7 +34,7 @@ export default function Footer() {
                     <Link href={"https://github.com/KapeXCIZ"}>
                         <GithubLogoIcon weight="light" />
                     </Link>
-                    <a href="mailto:alessio.capecchi.18@gmail.com">
+                    <a href="mailto:hello@alessiocapecchi.com">
                         <EnvelopeSimpleIcon weight="light" />
                     </a>
                 </div>

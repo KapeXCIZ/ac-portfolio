@@ -1,19 +1,21 @@
 'use client'
 
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/navigation";
 import Logo from "../Logo";
 import { ModeToggle } from "../ModeToggle";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+
 import { useEffect, useState } from "react";
 import HueSlider from "../HueSlider";
 import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { useTranslations } from "use-intl";
 
 
 export default function Navbar() {
     const currPage = usePathname();
     const [currentHue, setCurrentHue] = useState<number>(220);
     const [isScrolled, setIsScrolled] = useState(false);
+    const locale = useTranslations("navbar")
 
     useEffect(() => {
         const onScroll = () => {
@@ -42,26 +44,26 @@ export default function Navbar() {
         <>
             <nav className={cn("py-4 px-0 mx:px-4 fixed w-full h-20 top-0 z-50 duration-[.8s] border-b border-transparent transition-all ", isScrolled ? "backdrop-blur-lg bg-background/65 border-white-400/25 shadow-2xl dark:shadow-accent-600/15 shadow-accent-400/10" : "")}>
                 <div className="h-full flex grid-cols-3 container justify-between relative items-center w-full  mx-auto z-50 px-4" >
-                    <div className="h-3/4  flex-initial basis-3xs">
-                        <Link href={"/"} className="">
-                            <Logo className="h-full opacity-90 hover:opacity-100 transition ease-in-out" />
+                    <div className="hidden sm:block h-3/4  flex-initial basis-3xs">
+                        <Link href={"/"} className="w-fit">
+                            <Logo className="h-full  opacity-90 hover:opacity-100 transition ease-in-out" />
                         </Link>
                     </div>
-                    <div className="flex flex-row flex-none gap-2 sm:gap-4 text-md md:text-lg ">
+                    <div className="flex flex-row mx-auto flex-none gap-4 text-md md:text-lg ">
                         <Link href={"/"} className={cn("underlineHover  active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/" ? "underlineHoverActive" : "")}>
-                            Home
+                            {locale("home")}
                         </Link>
                         <Link href={"/projects"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out", currPage == "/projects" ? "underlineHoverActive" : "")}>
-                            Projects
+                            {locale("projects")}
                         </Link>
                         <Link href={"/about"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/about" ? "underlineHoverActive" : "")}>
-                            About
+                            {locale("about")}
                         </Link>
-                        <Link href={"/select"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/select" ? "underlineHoverActive" : "")}>
-                            Links
+                        <Link href={"/links"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/links" ? "underlineHoverActive" : "")}>
+                            {locale("links")}
                         </Link>
                     </div>
-                    <span className="flex justify-end items-center flex-initial basis-3xs">
+                    <span className="hidden sm:flex justify-end items-center flex-initial basis-3xs">
                         <div className=" justify-center items-center text-xl  me-3 hidden lg:flex  *:transition *:duration-300 *:p-1 dark:*:hover:text-accent-200 *:rounded-full">
                             <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
                                 <LinkedinLogoIcon />

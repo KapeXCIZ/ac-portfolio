@@ -64,7 +64,7 @@ html {
 
   --accent: oklch(0.97 0 0);
 
-  --accent-foreground: oklch(0.205 0 0);
+  --accent-foreground: var(--color-accent-700);
 
   --destructive: oklch(0.577 0.245 27.325);
 
@@ -107,6 +107,7 @@ html {
   --glow-exp: 0 0 20px color-mix(in srgb, var(--color-accent-400) 70%, transparent), 0 0 40px color-mix(in srgb, var(--color-accent-500) 80%, transparent),
     0 0 80px color-mix(in srgb, var(--color-accent-600) 90%, transparent);
 
+  --glow-sub: 0 0 40px color-mix(in srgb, var(--color-accent-300) 40%, transparent);
   --rotation-spinner: 0deg;
 }
 
@@ -185,7 +186,7 @@ html {
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent-foreground: var(--color-accent-100);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -208,6 +209,7 @@ html {
   --glow-exp: 0 0 20px var(--color-accent-300),
     0 0 40px var(--color-accent-400), 0 0 80px var(--color-accent-450),
     0 0 160px var(--color-accent-500), 0 0 200px var(--color-accent-500);
+  --glow-sub: 0 0 20px color-mix(in srgb, var(--color-accent-400) 50%, transparent), 0 0 40px color-mix(in srgb, var(--color-accent-500) 10%, transparent);
 }
 
 @layer base {
@@ -373,10 +375,7 @@ main {
 }
 
 .glow-text {
-  text-shadow: var(--glow);
-  animation-name: glowAnimText;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+  text-shadow: var(--glow-sub);
 }
 
 
