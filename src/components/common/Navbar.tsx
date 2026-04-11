@@ -7,8 +7,9 @@ import { cn } from "@/lib/utils";
 
 import { useEffect, useState } from "react";
 import HueSlider from "../HueSlider";
-import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
+import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon, ReadCvLogoIcon } from "@phosphor-icons/react";
 import { useTranslations } from "use-intl";
+import CustomButton from "../CustomButton";
 
 
 export default function Navbar() {
@@ -64,16 +65,27 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <span className="hidden sm:flex justify-end items-center flex-initial basis-3xs">
-                        <div className=" justify-center items-center text-xl  me-3 hidden lg:flex  *:transition *:duration-300 *:p-1 dark:*:hover:text-accent-200 *:rounded-full">
-                            <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
-                                <LinkedinLogoIcon />
-                            </Link>
-                            <Link href={"https://github.com/KapeXCIZ"} >
-                                <GithubLogoIcon />
-                            </Link>
-                            <a href="mailto:alessio.capecchi.18@gmail.com">
-                                <EnvelopeSimpleIcon />
-                            </a>
+                        <div className=" justify-center items-center text-xl  me-3 hidden lg:flex  *:p-1 ">
+                            <CustomButton variant="ghost">
+                                <Link href={"/files/alessio-capecchi-cv.pdf"}>
+                                    <ReadCvLogoIcon />
+                                </Link>
+                            </CustomButton>
+                            <CustomButton variant="ghost">
+                                <Link href={"https://www.linkedin.com/in/alessio-capecchi"}>
+                                    <LinkedinLogoIcon />
+                                </Link>
+                            </CustomButton>
+                            <CustomButton variant="ghost">
+                                <Link href={"https://github.com/KapeXCIZ"} >
+                                    <GithubLogoIcon />
+                                </Link>
+                            </CustomButton>
+                            <CustomButton variant="ghost">
+                                <a href="mailto:hello@alessiocapecchi.com">
+                                    <EnvelopeSimpleIcon />
+                                </a>
+                            </CustomButton>
                         </div>
                         <HueSlider className="rounded-e-none" hue={currentHue} onValueChange={handleChange} />
                         <ModeToggle className="rounded-s-none" />

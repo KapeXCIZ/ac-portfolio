@@ -1,7 +1,7 @@
 {
     "navbar": {
         "home": "Home",
-        "projects": "Progetti",
+        "projects": "Lavori",
         "about": "Chi sono",
         "links": "Links"
     },
@@ -24,19 +24,11 @@
                 "5": ""
             }
         },
-        "project": {
-            "featured": "Vetrina",
-            "h1": "Casa digitale per uno",
-            "h2": "chef professionale",
-            "desc": "Con un design pulito e reattivo, il sito si adatta a qualsiasi dispositivo, consentendo ai clienti di esplorare facilmente i servizi ed entrare in contatto.",
-            "view": "Guarda",
-            "projects": "Progetti"
-        },
         "teaser": {
             "r1": "Pronto a portare la tua attività online?",
             "r2": "Un sito professionale, senza complicazioni.",
             "b1": "Contattami",
-            "b2": "Guarda i miei progetti"
+            "b2": "Lavori"
         },
         "context": {
             "text": "Are you a recruiter? Here's my ",
@@ -45,7 +37,23 @@
     },
     "projects": {
         "hero": {
-            "h1": "Siti Online"
+            "h1": "Siti Realizzati"
+        },
+        "1": {
+            "featured": "Progetto in evidenza",
+            "h1": "Il sito web di uno",
+            "h2": "chef professionista",
+            "desc": "Design curato e adatto a ogni dispositivo, per permettere ai clienti di scoprire i servizi e mettersi in contatto in pochi tap.",
+            "b1": "Visita il sito",
+            "b2": "Contattami"
+        },
+        "2": {
+            "featured": "Progetto in evidenza",
+            "h1": "La vetrina online di una",
+            "h2": "guida turistica",
+            "desc": "I turisti non aspettano — il sito nemmeno. Ogni sezione è pensata per trasformare la curiosità in una prenotazione, da qualsiasi dispositivo.",
+            "b1": "Visita il sito",
+            "b2": "Contattami"
         }
     }
 }

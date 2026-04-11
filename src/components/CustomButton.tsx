@@ -2,6 +2,8 @@
 
 import { cn } from "@/lib/utils";
 
+
+
 const variants = {
     ghost: "hover:bg-accent-500/10 dark:hover:bg-accent-400/20  hover:text-accent-800 dark:hover:text-accent-200 ",
     outline: "border  border-accent-400 hover:bg-accent-450 text-accent-400 hover:text-accent-100 ",
@@ -9,9 +11,13 @@ const variants = {
     solid: " text-white bg-accent-400 dark:bg-accent-600  solid-button py-[10px] ",
 };
 
-export default function CustomButton({ children, className = "", variant = "glow", ...props }) {
+type Variant = "ghost" | "outline" | "glow" | "solid";
+
+
+
+export default function CustomButton({ children, className, variant = "glow", ...props }: { children: React.ReactNode, className?: string, variant: Variant }) {
     return (
-        <button {...props} className={cn("border border-transparent transition-all duration-400 rounded-full ease-in-out px-6 py-2  flex justify-center items-center cursor-pointer ", variants[variant], className)}>
+        <button {...props} className={cn("border border-transparent transition-all duration-350 rounded-full ease-in-out px-6 py-2  flex justify-center items-center cursor-pointer ", variants[variant], className)}>
             {children}
         </button>
     );

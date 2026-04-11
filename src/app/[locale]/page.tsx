@@ -4,14 +4,14 @@ import ProjectSection from "@/components/ProjectSection";
 
 export default function Home() {
     const projectData = {
-        runnerUp: ["case study", "case study"],
-        runnerDown: ["next.js", "tailwind", "vercel"],
+        runnerUp: ["design that works", "code that lasts", "details matter"],
+        runnerDown: ["fast", "responsive", "minimal", "precise", "reliable"],
         imageSrc: "/images/projects/project-mock-1.png",
         imageAlt: "Example of a project",
         projectUrl: "https://www.teachandtaste.it",
         itLabels: ["Sito vetrina", "Mobile friendly", "SEO ottimizzato", "Design su misura", "Consegna rapida"],
         enLabels: ["HTML", "CSS", "Javascript", "Next.js", "React", "Tailwind", "Next-intl"],
-        translations: "home.project"
+        translations: "projects.1"
     };
 
     return (

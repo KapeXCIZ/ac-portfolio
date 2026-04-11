@@ -29,14 +29,14 @@
             "h1": "A digital home for a",
             "h2": "professional chef",
             "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.",
-            "view": "View",
-            "projects": "Projects"
+            "b1": "View",
+            "b2": "Projects"
         },
         "teaser": {
             "r1": "Behind every project there's curiosity, dedication, and a journey in progress.",
             "r2": "Discover who I am and what drives me to create.",
             "b1": "Contact me",
-            "b2": "CV"
+            "b2": "Resume"
         },
         "context": {
             "text": "Stavi cercando i miei servizi di design?",
@@ -45,22 +45,28 @@
     },
     "projects": {
         "hero": {
-            "h1": "Online Websites"
+            "h1": "Live Websites"
         },
         "common": {
             "featured": "Featured project",
             "b1": "View",
             "b2": "Contact Me"
         },
-        "project1": {
+        "1": {
+            "featured": "Featured project",
             "h1": "A digital home for a",
             "h2": "professional chef",
-            "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch."
+            "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.",
+            "b1": "View",
+            "b2": "Contact Me"
         },
-        "project2": {
-            "h1": "Casa digitale per uno",
+        "2": {
+            "featured": "Featured project",
+            "h1": "A visual presentation for a",
             "h2": "turist guide",
-            "desc": "Con un design pulito e reattivo, il sito si adatta a qualsiasi dispositivo, consentendo ai clienti di esplorare facilmente i servizi ed entrare in contatto."
+            "desc": "Tourists move fast — the site keeps up. Every section is built to turn curiosity into a booking, from any device, in seconds.",
+            "b1": "View",
+            "b2": "Contact Me"
         }
     }
 }
