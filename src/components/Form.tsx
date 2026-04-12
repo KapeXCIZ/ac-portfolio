@@ -40,6 +40,7 @@ export default function Form() {
 
     function onSubmit(data: z.infer<typeof formSchema>) {
         // do something with the values
+        console.log(data)
     }
 
     return (
