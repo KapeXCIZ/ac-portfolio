@@ -15,7 +15,7 @@ export default function ContextualLink() {
     };
     return (
         <>
-            <div className="mx-auto w-fit m-4 text-muted-foreground/50 z-50">
+            <div className="w-full text-left md:text-center mb-6 text-muted-foreground/50 z-50">
                 {t("text")} <button className="cursor-pointer underline hover:text-foreground transition" onClick={() => switchLocale(locale === 'en' ? 'it' : 'en')} > {t("button")}</button>
             </div>
         </>

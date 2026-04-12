@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from "@/lib/utils";
+import { ButtonHTMLAttributes } from "react";
 
 
 
@@ -13,9 +14,11 @@ const variants = {
 
 type Variant = "ghost" | "outline" | "glow" | "solid";
 
+interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    children: React.ReactNode, className?: string, variant: Variant
+}
 
-
-export default function CustomButton({ children, className, variant = "glow", ...props }: { children: React.ReactNode, className?: string, variant: Variant }) {
+export default function CustomButton({ children, className, variant = "glow", ...props }: CustomButtonProps) {
     return (
         <button {...props} className={cn("border border-transparent transition-all duration-350 rounded-full ease-in-out px-6 py-2  flex justify-center items-center cursor-pointer ", variants[variant], className)}>
             {children}

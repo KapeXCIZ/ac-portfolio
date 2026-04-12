@@ -84,7 +84,7 @@ export default function ProjectSection({
                             <Link href={projectUrl} >
                                 <CustomButton variant="glow" className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />{t("b1")}</CustomButton>
                             </Link>
-                            <Link href={"/projects"}  >
+                            <Link href={"/about#form"}  >
                                 <CustomButton variant="outline" className="flex justify-center items-center gap-2 text-accent-400"><BriefcaseIcon weight="bold" />{t("b2")}</CustomButton>
                             </Link>
                         </div>

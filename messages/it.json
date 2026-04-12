@@ -3,7 +3,8 @@
         "home": "Home",
         "projects": "Lavori",
         "about": "Chi sono",
-        "links": "Links"
+        "links": "Links",
+        "contact": "Contattami"
     },
     "home": {
         "homeHero": {
@@ -42,7 +43,7 @@
         "1": {
             "featured": "Progetto in evidenza",
             "h1": "Il sito web di uno",
-            "h2": "chef professionista",
+            "h2": "Chef Professionista",
             "desc": "Design curato e adatto a ogni dispositivo, per permettere ai clienti di scoprire i servizi e mettersi in contatto in pochi tap.",
             "b1": "Visita il sito",
             "b2": "Contattami"
@@ -50,10 +51,38 @@
         "2": {
             "featured": "Progetto in evidenza",
             "h1": "La vetrina online di una",
-            "h2": "guida turistica",
+            "h2": "Guida Turistica",
             "desc": "I turisti non aspettano — il sito nemmeno. Ogni sezione è pensata per trasformare la curiosità in una prenotazione, da qualsiasi dispositivo.",
             "b1": "Visita il sito",
             "b2": "Contattami"
         }
+    },
+    "about": {
+        "h1": "Chi sono",
+        "text": {
+            "p1": "Ho iniziato a programmare da ragazzo, spinto dalla curiosità e da un fratello maggiore ingegnere informatico. Da allora non mi sono più fermato.",
+            "p2": "Non mi interessa solo che il sito funzioni — mi interessa che faccia sentire qualcosa a chi lo visita. Le animazioni, i dettagli, le piccole interazioni che rendono un sito piacevole da usare: è lì che si vede la differenza.",
+            "p3": "I miei clienti mi scelgono spesso perché i miei siti sono visivamente curati, non generici. E perché dietro c'è una persona seria, non un'agenzia.",
+            "p4": ""
+        },
+        "tech": {
+            "languages": "Languages",
+            "frameworks": "Frameworks",
+            "tools": "Tools"
+        }
+    },
+    "form": {
+        "name": "Nome completo",
+        "namePlaceholder": "Mario Rossi",
+        "mailPlaceholder": "mario@esempio.com",
+        "message": "Messaggio",
+        "messagePlaceholder": "Raccontami il tuo progetto...",
+        "nameTooLong": "Il nome deve essere al massimo 20 caratteri",
+        "nameTooShort": "Il nome deve essere almeno lungo 2 caratteri",
+        "emailNotValid": "Email non valida",
+        "messageTooLong": "Il messaggio deve essere lungo al massimo 300 caratteri",
+        "messageTooShort": "Il messaggio deve essere lungo almeno 10 caratteri",
+        "sending": "Invio in corso...",
+        "send": "Invia"
     }
 }

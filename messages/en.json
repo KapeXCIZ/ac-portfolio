@@ -3,7 +3,8 @@
         "home": "Home",
         "projects": "Projects",
         "about": "About",
-        "links": "Links"
+        "links": "Links",
+        "contact": "Contact me"
     },
     "home": {
         "homeHero": {
@@ -39,7 +40,7 @@
             "b2": "Resume"
         },
         "context": {
-            "text": "Stavi cercando i miei servizi di design?",
+            "text": "Stavi cercando i miei servizi?",
             "button": "Clicca qui!"
         }
     },
@@ -55,7 +56,7 @@
         "1": {
             "featured": "Featured project",
             "h1": "A digital home for a",
-            "h2": "professional chef",
+            "h2": "Professional Chef",
             "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.",
             "b1": "View",
             "b2": "Contact Me"
@@ -63,10 +64,38 @@
         "2": {
             "featured": "Featured project",
             "h1": "A visual presentation for a",
-            "h2": "turist guide",
+            "h2": "Turist Guide",
             "desc": "Tourists move fast — the site keeps up. Every section is built to turn curiosity into a booking, from any device, in seconds.",
             "b1": "View",
             "b2": "Contact Me"
         }
+    },
+    "about": {
+        "h1": "Get to know me",
+        "text": {
+            "p1": "I got into programming the way most kids do — through video games and a older brother who studied computer engineering. That early curiosity never left.",
+            "p2": "I'm studying Computer Science in Pisa — and honestly, my favorite part isn't writing code. It's the moment you finally understand why something works the way it does. Data structures, algorithms, the invisible decisions behind software you use every day without thinking about it.",
+            "p3": "The thing that probably makes me a bit different is that I've never been able to separate how something works from how it feels. I get genuinely bothered by a button that's slightly off, an animation that doesn't quite land, a transition that breaks the flow. My friends have always told me my sites look different from everyone else's — I'll take that.",
+            "p4": "When I'm not coding, I'm shooting photos, listening to rock and metal, or reading — lately Cal Newport's Deep Work, which probably explains a lot about how I approach my work."
+        },
+        "tech": {
+            "languages": "Languages",
+            "frameworks": "Frameworks",
+            "tools": "Tools"
+        }
+    },
+    "form": {
+        "name": "Full name",
+        "namePlaceholder": "John Doe",
+        "mailPlaceholder": "john@example.com",
+        "message": "Message",
+        "messagePlaceholder": "Tell me about your project...",
+        "nameTooLong": "The name must be under 20 characters",
+        "nameTooShort": "The name must be at least 2 characters long",
+        "emailNotValid": "Email invalid",
+        "messageTooLong": "The form content must be under 300 characters",
+        "messageTooShort": "The form content must be at least 10 characters long",
+        "sending": "Sending...",
+        "send": "Send"
     }
 }

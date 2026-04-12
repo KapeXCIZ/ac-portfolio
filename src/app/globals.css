@@ -411,19 +411,6 @@ main {
   animation: caret-blink 1s ease-in infinite;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("/images/home/noise.svg");
-  background-repeat: repeat;
-  background-size: 500px 500px;
-  /* regola la scala */
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  z-index: 50;
-}
 
 .solid-button {
   position: relative;

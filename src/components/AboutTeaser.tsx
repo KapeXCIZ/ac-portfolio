@@ -19,12 +19,12 @@ export default function AboutTeaser() {
             <h1 className="text-center font-sans text-3xl md:text-4xl font-light z-1 px-6">{t("r1")}<br /><span className="italic font-serif">{t("r2")}</span></h1>
             <div className="flex flex-row gap-3  justify-center items-center">
                 {/* cta */}
-                <NavLink href={"/about"} className="z-0  md:text-lg">
+                <NavLink href={"/about#form"} className="z-0  md:text-lg">
                     <CustomButton className="flex gap-1 items-center justify-center -z-1 " variant="solid"><AtIcon />{t("b1")}</CustomButton>
                 </NavLink>
                 {/* secondary button */}
                 {locale === "it"
-                    ? <NavLink href={"/projects"} target="_blank" className="z-0 md:text-lg">
+                    ? <NavLink href={"/projects"} className="z-0 md:text-lg">
                         <CustomButton className="flex gap-1 items-center justify-center -z-1 " variant="outline"><BriefcaseIcon />{t("b2")}</CustomButton>
                     </NavLink>
                     : <Link href={"/files/alessio-capecchi-cv.pdf"} target="_blank" className="z-0 md:text-lg">

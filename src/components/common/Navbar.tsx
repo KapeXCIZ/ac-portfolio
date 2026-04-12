@@ -63,11 +63,14 @@ export default function Navbar() {
                         <Link href={"/links"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/links" ? "underlineHoverActive" : "")}>
                             {locale("links")}
                         </Link>
+                        <Link href={"/about#form"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ")}>
+                            {locale("contact")}
+                        </Link>
                     </div>
                     <span className="hidden sm:flex justify-end items-center flex-initial basis-3xs">
                         <div className=" justify-center items-center text-xl  me-3 hidden lg:flex  *:p-1 ">
                             <CustomButton variant="ghost">
-                                <Link href={"/files/alessio-capecchi-cv.pdf"}>
+                                <Link rel="noopener noreferrer" href={"/files/alessio-capecchi-cv.pdf"}>
                                     <ReadCvLogoIcon />
                                 </Link>
                             </CustomButton>
