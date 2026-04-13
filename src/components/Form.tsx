@@ -12,9 +12,15 @@ import { Textarea } from "./ui/textarea";
 
 import CustomButton from "./CustomButton";
 import { useTranslations } from "next-intl";
+import { sendContact } from "@/actions/contact";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Label } from "./ui/label";
 
 export default function Form() {
     const t = useTranslations("form");
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState(false);
 
     const formSchema = z.object({
         name: z
@@ -29,6 +35,7 @@ export default function Form() {
             .max(300, t("messageTooLong"))
     });
 
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -38,15 +45,18 @@ export default function Form() {
         },
     })
 
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        // do something with the values
-        console.log(data)
+    async function onSubmit(data: z.infer<typeof formSchema>) {
+        const result = await sendContact(data);
+        if (result?.success) {
+            setSuccess(true);
+        } else {
+            setError(true);
+        }
     }
 
     return (
         <form onSubmit={form.handleSubmit(onSubmit)}>
             <FieldGroup>
-
                 {/* Name */}
                 <Controller
                     name="name"
@@ -121,10 +131,16 @@ export default function Form() {
                         </Field>
                     )}
                 />
+                <div className="w-full  flex flex-col justify-center items-center gap-2">
 
-                <CustomButton type="submit" variant="solid" disabled={form.formState.isSubmitting}>
-                    {form.formState.isSubmitting ? t("sending") : t("send")}
-                </CustomButton>
+                    <CustomButton className="w-full" type="submit" variant="solid" disabled={form.formState.isSubmitting}>
+                        {form.formState.isSubmitting ? t("sending") : t("send")}
+                    </CustomButton>
+                    <p className={cn("", success ? "block" : "hidden")}></p>
+                    {success && <Label className="text-green-600">{t("success")}</Label>}
+                    {error && <Label >{t("error")}</Label>}
+                </div>
+
 
             </FieldGroup>
         </form>

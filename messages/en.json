@@ -96,6 +96,8 @@
         "messageTooLong": "The form content must be under 300 characters",
         "messageTooShort": "The form content must be at least 10 characters long",
         "sending": "Sending...",
-        "send": "Send"
+        "send": "Send",
+        "success": "Message sent with success!",
+        "error": "Something went wrong, retry."
     }
 }

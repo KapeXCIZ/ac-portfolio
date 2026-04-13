@@ -83,6 +83,8 @@
         "messageTooLong": "Il messaggio deve essere lungo al massimo 300 caratteri",
         "messageTooShort": "Il messaggio deve essere lungo almeno 10 caratteri",
         "sending": "Invio in corso...",
-        "send": "Invia"
+        "send": "Invia",
+        "success": "Messaggio inviato correttamente!",
+        "error": "Qualcosa è andato storto, riprova."
     }
 }
