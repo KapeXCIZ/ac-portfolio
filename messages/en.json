@@ -1,4 +1,22 @@
 {
+    "metadata": {
+        "home": {
+            "title": "Alessio Capecchi — Web Developer",
+            "description": "Alessio Capecchi, Computer Science student and freelance web developer based in Pisa. I build clean, fast and user-focused websites."
+        },
+        "projects": {
+            "title": "Projects — Alessio Capecchi",
+            "description": "A selection of websites and web applications I have built, from professional chef portfolios to tourist guide showcases."
+        },
+        "about": {
+            "title": "About — Alessio Capecchi",
+            "description": "Computer Science student in Pisa with a passion for frontend development, design and the details that make a website feel right."
+        },
+        "links": {
+            "title": "Links — Alessio Capecchi",
+            "description": "Explore all of Alessio's work — web development portfolio and photography."
+        }
+    },
     "navbar": {
         "home": "Home",
         "projects": "Projects",
@@ -48,18 +66,13 @@
         "hero": {
             "h1": "Live Websites"
         },
-        "common": {
-            "featured": "Featured project",
-            "b1": "View",
-            "b2": "Contact Me"
-        },
         "1": {
             "featured": "Featured project",
             "h1": "A digital home for a",
             "h2": "Professional Chef",
             "desc": "With a clean, responsive design, the site adapts to any device, making it easy for customers to explore services and get in touch.",
             "b1": "View",
-            "b2": "Contact Me"
+            "b2": "Projects"
         },
         "2": {
             "featured": "Featured project",
@@ -67,7 +80,7 @@
             "h2": "Turist Guide",
             "desc": "Tourists move fast — the site keeps up. Every section is built to turn curiosity into a booking, from any device, in seconds.",
             "b1": "View",
-            "b2": "Contact Me"
+            "b2": "Projects"
         }
     },
     "about": {
@@ -75,7 +88,8 @@
         "text": {
             "p1": "I got into programming the way most kids do — through video games and a older brother who studied computer engineering. That early curiosity never left.",
             "p2": "I'm studying Computer Science in Pisa — and honestly, my favorite part isn't writing code. It's the moment you finally understand why something works the way it does. Data structures, algorithms, the invisible decisions behind software you use every day without thinking about it.",
-            "p3": "The thing that probably makes me a bit different is that I've never been able to separate how something works from how it feels. I get genuinely bothered by a button that's slightly off, an animation that doesn't quite land, a transition that breaks the flow. My friends have always told me my sites look different from everyone else's — I'll take that.",
+            "bigP": "The thing that probably makes me a bit different is that I've never been able to separate how something works from how it feels. ",
+            "p3": "I get genuinely bothered by a button that's slightly off, an animation that doesn't quite land, a transition that breaks the flow. My friends have always told me my sites look different from everyone else's — I'll take that.",
             "p4": "When I'm not coding, I'm shooting photos, listening to rock and metal, or reading — lately Cal Newport's Deep Work, which probably explains a lot about how I approach my work."
         },
         "tech": {
@@ -85,6 +99,7 @@
         }
     },
     "form": {
+        "getInTouch": "Get in touch!",
         "name": "Full name",
         "namePlaceholder": "John Doe",
         "mailPlaceholder": "john@example.com",
@@ -97,6 +112,7 @@
         "messageTooShort": "The form content must be at least 10 characters long",
         "sending": "Sending...",
         "send": "Send",
+        "sent": "Message sent!",
         "success": "Message sent with success!",
         "error": "Something went wrong, retry."
     }

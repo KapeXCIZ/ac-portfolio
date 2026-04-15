@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
@@ -24,15 +23,23 @@ const myFont = localFont({
 
 
 
-export const metadata: Metadata = {
-	title: "Alessio Capecchi",
-	description: "Select page for Alessio's websites",
-	icons: {
-		icon: [
-			{ url: '/logo.svg', media: '(prefers-color-scheme: dark)' },
-		],
-	},
-};
+
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: 'metadata' });
+
+	return {
+		title: t('home.title'),         // cambia il namespace per ogni pagina
+		description: t('home.description'),
+		icons: {
+			icon: [
+				{ url: '/logo.svg', media: '(prefers-color-scheme: dark)' },
+			],
+		},
+	};
+}
 
 
 export default async function LocaleLayout({
@@ -65,7 +72,7 @@ export default async function LocaleLayout({
 					>
 						<NextIntlClientProvider messages={messages}>
 							<Navbar />
-							<main className="overscroll-auto mt-20">
+							<main className="overscroll-auto mt-20 font-sans">
 								{children}
 							</main>
 							<Footer />

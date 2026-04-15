@@ -3,6 +3,7 @@
 import AboutContent from "@/components/AboutContent";
 import AboutCTA from "@/components/AboutCTA";
 import AboutHero from "@/components/AboutHero";
+// import SkillsGrid from "@/components/SkillsGrid";
 
 export default function AboutPage() {
 
@@ -10,8 +11,8 @@ export default function AboutPage() {
 
         <>
             <AboutHero />
-            {/* <div className="font-deco mx-auto w-fit text-3xl md:text-4xl lg:text-5xl xl:text-6xl h-[60vh] flex justify-center items-center">Work in progress...</div> */}
             <AboutContent />
+            {/* <SkillsGrid /> */}
             <AboutCTA />
         </>
 

@@ -1,16 +1,19 @@
-import type { Metadata } from "next";
+import { getTranslations } from 'next-intl/server';
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'metadata' });
 
-export const metadata: Metadata = {
-    title: "Select",
-    description: "Select page for Alessio's development portfolio",
-    icons: {
-        icon: [
-            { url: '/../logo.svg', media: '(prefers-color-scheme: dark)' },
-        ],
-    },
-};
-
+    return {
+        title: t('links.title'),         // cambia il namespace per ogni pagina
+        description: t('links.description'),
+        icons: {
+            icon: [
+                { url: '/logo.svg', media: '(prefers-color-scheme: dark)' },
+            ],
+        },
+    };
+}
 export default function AboutLayout({
     children,
 }: Readonly<{

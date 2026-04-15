@@ -1,7 +1,19 @@
-# My personal website portfolio
+# alessiocapecchi.com
 
-Hi, this is my own personal portfolio.
-Made using Next.js and Typescript.
-Deployed on Vercel Platform.
+My personal portfolio website, built with Next.js 15 and next-intl.
 
-This is the link of deployed website: [https://www.alessiocapecchi.com/](alessiocapecchi.com)
+Available in two languages for two different audiences — English for recruiters and tech companies, Italian for local clients looking for a professional website.
+
+## Stack
+
+- **Framework** Next.js 16.2.3 (App Router)
+- **i18n** next-intl v4
+- **Styling** Tailwind CSS v4
+- **Animations** Motion
+- **Email** Resend
+- **Deployment** Vercel
+
+## Routes
+
+- `/` → Developer portfolio (EN)
+- `/it` → Web design services for local clients (IT)

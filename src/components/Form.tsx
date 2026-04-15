@@ -16,10 +16,10 @@ import { sendContact } from "@/actions/contact";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Label } from "./ui/label";
+import { EnvelopeSimpleIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react";
 
-export default function Form() {
+export default function Form({ success, setSuccess }: { success: boolean, setSuccess: (s: boolean) => void }) {
     const t = useTranslations("form");
-    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
     const formSchema = z.object({
@@ -48,6 +48,7 @@ export default function Form() {
     async function onSubmit(data: z.infer<typeof formSchema>) {
         const result = await sendContact(data);
         if (result?.success) {
+            form.reset();
             setSuccess(true);
         } else {
             setError(true);
@@ -133,11 +134,17 @@ export default function Form() {
                 />
                 <div className="w-full  flex flex-col justify-center items-center gap-2">
 
-                    <CustomButton className="w-full" type="submit" variant="solid" disabled={form.formState.isSubmitting}>
-                        {form.formState.isSubmitting ? t("sending") : t("send")}
+                    <CustomButton className="w-full flex flex-row justify-center items-center gap-1 disabled:pointer-events-none " type="submit" variant="solid" disabled={form.formState.isSubmitting || success}>
+                        {
+                            form.formState.isSubmitting
+                                ? <><EnvelopeSimpleIcon />{t("sending")}</>
+                                : success
+                                    ? <>{t("sent")}</>
+                                    : <><PaperPlaneTiltIcon />{t("send")}</>
+                        }
                     </CustomButton>
                     <p className={cn("", success ? "block" : "hidden")}></p>
-                    {success && <Label className="text-green-600">{t("success")}</Label>}
+                    {success && <Label className="text-green-600 :pointer-events-none ho">{t("success")}</Label>}
                     {error && <Label >{t("error")}</Label>}
                 </div>
 

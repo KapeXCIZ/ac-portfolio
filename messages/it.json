@@ -1,4 +1,22 @@
 {
+    "metadata": {
+        "home": {
+            "title": "Alessio Capecchi — Sviluppatore Web",
+            "description": "Creo siti web professionali per piccole imprese e professionisti a Pisa. Design curato, veloci e ottimizzati per Google."
+        },
+        "projects": {
+            "title": "Lavori — Alessio Capecchi",
+            "description": "Siti vetrina realizzati per professionisti e piccole imprese. Scopri cosa posso fare per la tua attività."
+        },
+        "about": {
+            "title": "Chi sono — Alessio Capecchi",
+            "description": "Scopri chi è Alessio, come lavora e perché sceglierlo per il tuo prossimo sito web. Una persona seria, non un'agenzia."
+        },
+        "links": {
+            "title": "Link — Alessio Capecchi",
+            "description": "Esplora tutti i lavori di Alessio — sviluppo web e fotografia."
+        }
+    },
     "navbar": {
         "home": "Home",
         "projects": "Lavori",
@@ -46,7 +64,7 @@
             "h2": "Chef Professionista",
             "desc": "Design curato e adatto a ogni dispositivo, per permettere ai clienti di scoprire i servizi e mettersi in contatto in pochi tap.",
             "b1": "Visita il sito",
-            "b2": "Contattami"
+            "b2": "Lavori"
         },
         "2": {
             "featured": "Progetto in evidenza",
@@ -54,16 +72,17 @@
             "h2": "Guida Turistica",
             "desc": "I turisti non aspettano — il sito nemmeno. Ogni sezione è pensata per trasformare la curiosità in una prenotazione, da qualsiasi dispositivo.",
             "b1": "Visita il sito",
-            "b2": "Contattami"
+            "b2": "Lavori"
         }
     },
     "about": {
         "h1": "Chi sono",
         "text": {
             "p1": "Ho iniziato a programmare da ragazzo, spinto dalla curiosità e da un fratello maggiore ingegnere informatico. Da allora non mi sono più fermato.",
-            "p2": "Non mi interessa solo che il sito funzioni — mi interessa che faccia sentire qualcosa a chi lo visita. Le animazioni, i dettagli, le piccole interazioni che rendono un sito piacevole da usare: è lì che si vede la differenza.",
-            "p3": "I miei clienti mi scelgono spesso perché i miei siti sono visivamente curati, non generici. E perché dietro c'è una persona seria, non un'agenzia.",
-            "p4": ""
+            "p2": "",
+            "bigP": "Non mi interessa solo che il sito funzioni, mi interessa che faccia sentire qualcosa a chi lo visita.",
+            "p3": "Le animazioni, i dettagli, le piccole interazioni che rendono un sito piacevole da usare: è lì che si vede la differenza.",
+            "p4": "I miei clienti mi scelgono spesso perché i miei siti sono visivamente curati, non generici. E perché dietro c'è una persona seria, non un'agenzia."
         },
         "tech": {
             "languages": "Languages",
@@ -72,6 +91,7 @@
         }
     },
     "form": {
+        "getInTouch": "Mettiamoci in contatto!",
         "name": "Nome completo",
         "namePlaceholder": "Mario Rossi",
         "mailPlaceholder": "mario@esempio.com",
@@ -84,6 +104,7 @@
         "messageTooShort": "Il messaggio deve essere lungo almeno 10 caratteri",
         "sending": "Invio in corso...",
         "send": "Invia",
+        "sent": "Messaggio inviato!",
         "success": "Messaggio inviato correttamente!",
         "error": "Qualcosa è andato storto, riprova."
     }

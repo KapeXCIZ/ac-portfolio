@@ -481,6 +481,19 @@ main {
 }
 
 
+.solid-button.success {
+  background-color: var(--color-green-500);
+}
+
+.solid-button.success::after {
+  background: var(--color-accent-500);
+}
+
+.solid-button.success:hover {
+  box-shadow: 0 0 30px var(--color-green-400);
+  background-color: var(--color-green-200);
+}
+
 
 
 .runner {
