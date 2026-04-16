@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-function SkillsGrid({ elements, title }: { elements: Array<[string, string]>, title: string }) {
+function SkillsGrid({ elements, title }: { elements: Skill[], title: string }) {
     return (<>
-        <div className="lg:grid flex-col grid-cols-3 gap-0 mb-10">
-            <h1 className="text-4xl  font-sans font-light tracking-normal   text-secondary-foreground/80 col-span-1 pt-4">{title}</h1>
-            <div className="flex flex-row justify-start items-center gap-8 flex-wrap my-4 col-span-2">
-                {elements.map(([path, name], key) => (
-                    <span key={key} className="flex flex-row justify-center items-center gap-2">
-                        <Image key={key} src={path} height={256} width={256} alt={name + " icon"} className="size-10" />
-                        <p className="text-xl font-light font-sans">{name}</p>
+        <div className="lg:grid flex-col grid-cols-3 gap-0 mb-10  ">
+            <div className="text-5xl  font-deco flex justify-start lg:justify-center items-center     text-foreground/80 col-span-1 pt-4">{title}</div>
+            <div className="flex flex-row justify-start lg:justify-center items-center gap-4 flex-wrap my-4 col-span-2">
+                {elements.map(({ path, name }, key) => (
+                    <span key={key} className="flex flex-row justify-center items-center rounded-full select-none hover:border-accent-foreground/80 duration-400 transition ease-in-out border-dashed  border-2 px-6 py-3 gap-2">
+                        <Image key={key} src={path} height={256} width={256} alt={name + " icon"} className="size-8" />
+                        <p className="text-xl  text-foreground/70 font-mono">{name}</p>
                     </span>
                 ))}
             </div>
@@ -17,20 +17,25 @@ function SkillsGrid({ elements, title }: { elements: Array<[string, string]>, ti
     </>)
 }
 
+interface Skill {
+    path: string,
+    name: string
+}
 
 export default function Skills() {
     const prefix = "/images/svgs/";
     const suffix = ".svg"
-    let languages: Array<[string, string]> = [["java", "Java"], ["javascript", "Javascript"], ["typescript", "Typescript"], ["php", "Php"], ["sql", "SQL"]];
-    languages = languages.map(([path, name]) => [prefix + path + suffix, name])
-    let frameworks: Array<[string, string]> = [["react", "React.js"], ["next", "Next.js"], ["node", "Node.js"]];
-    frameworks = frameworks.map(([path, name]) => [prefix + path + suffix, name])
+    function buildSkills(items: Array<[string, string]>): Skill[] {
+        return items.map(([path, name]) => ({ path: prefix + path + suffix, name: name }));
+    }
+    const languages: Skill[] = buildSkills([["typescript", "Typescript"], ["javascript", "Javascript"], ["java", "Java"], ["html", "HTML"], ["css", "CSS"], ["sql", "SQL"], ["php", "Php"]]);
+
+    const tools: Skill[] = buildSkills([["next", "Next.js"], ["react", "React.js"], ["node", "Node.js"], ["docker", "Docker"], ["git", "Git"], ["intellij", "IntelliJ IDEA"], ["mysql", "MySQL"], ["tailwind", "Tailwind.css"], ["vscode", "VS Code"]]);
 
     return (
-        <div className="container mx-auto max-w-[1000px]  px-10 md:px-16 lg:px-20">
+        <div className="container mx-auto max-w-[1200px]  px-10 md:px-16 lg:px-20 mb-16">
             <SkillsGrid elements={languages} title="LANGUAGES" />
-            <SkillsGrid elements={frameworks} title="FRAMEWORKS" />
-
+            <SkillsGrid elements={tools} title="TOOLS" />
         </div>
     )
 };

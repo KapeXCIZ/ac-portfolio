@@ -11,13 +11,23 @@ import { EnvelopeSimpleIcon, GithubLogoIcon, LinkedinLogoIcon, ReadCvLogoIcon } 
 import { useTranslations } from "use-intl";
 import CustomButton from "../CustomButton";
 import Link from "next/link";
+import { inView } from "motion"
 
 
 export default function Navbar() {
     const currPage = usePathname();
     const [currentHue, setCurrentHue] = useState<number>(220);
     const [isScrolled, setIsScrolled] = useState(false);
-    const locale = useTranslations("navbar")
+    const locale = useTranslations("navbar");
+    const [formInView, setFormInView] = useState(false);
+    const form = document.getElementById("form");
+
+    inView(form,
+        () => {
+            setFormInView(true);
+            return () => setFormInView(false);
+        }
+    )
 
     useEffect(() => {
         const onScroll = () => {
@@ -61,11 +71,11 @@ export default function Navbar() {
                         <NavLink href={"/about"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/about" ? "underlineHoverActive" : "")}>
                             {locale("about")}
                         </NavLink>
+                        <NavLink href={"/about#form"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", formInView ? "underlineHoverActive" : "")}>
+                            {locale("contact")}
+                        </NavLink>
                         <NavLink href={"/links"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/links" ? "underlineHoverActive" : "")}>
                             {locale("links")}
-                        </NavLink>
-                        <NavLink href={"/about#form"} className={cn("underlineHover active:scale-90  transition-[scale] duration-150 ease-in-out ")}>
-                            {locale("contact")}
                         </NavLink>
                     </div>
                     <span className="hidden sm:flex justify-end items-center flex-initial basis-3xs">

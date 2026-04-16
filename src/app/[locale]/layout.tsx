@@ -9,6 +9,9 @@ import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import "@/app/globals.css";
+import 'lenis/dist/lenis.css';
+import { ReactLenis } from 'lenis/react';
+
 
 
 export function generateStaticParams() {
@@ -25,6 +28,7 @@ const myFont = localFont({
 
 
 import { getTranslations } from 'next-intl/server';
+import TransitionHandler from "./transition-handler";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
@@ -71,11 +75,20 @@ export default async function LocaleLayout({
 						disableTransitionOnChange
 					>
 						<NextIntlClientProvider messages={messages}>
-							<Navbar />
-							<main className="overscroll-auto mt-20 font-sans">
-								{children}
-							</main>
-							<Footer />
+							<ReactLenis root options={{
+								lerp: 0.1, // Più basso è, più è fluido (ma più "lento")
+								duration: 1.5,
+								smoothWheel: true,
+								// Rendi Lenis prioritario per le animazioni
+								syncTouch: false,
+								anchors: true,
+							}} >
+								<Navbar />
+								<TransitionHandler>
+									{children}
+								</TransitionHandler>
+								<Footer />
+							</ReactLenis>
 						</NextIntlClientProvider>
 					</ThemeProvider>
 				</body>
