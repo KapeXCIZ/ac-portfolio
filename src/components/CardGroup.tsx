@@ -37,12 +37,12 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
     const rawMouseY = useMotionValue(0);
 
     // Molle solo per il mouse (per dare fluidità al movimento della mano)
-    const mouseX = useSpring(rawMouseX, { stiffness: 100, damping: 30 });
-    const mouseY = useSpring(rawMouseY, { stiffness: 100, damping: 30 });
+    const mouseX = useSpring(rawMouseX, { stiffness: 100, damping: 50 });
+    const mouseY = useSpring(rawMouseY, { stiffness: 100, damping: 50 });
 
     // Versione più ammortizzata per la card centrale
-    const mouseXdamp = useSpring(rawMouseX, { stiffness: 60, damping: 40 });
-    const mouseYdamp = useSpring(rawMouseY, { stiffness: 60, damping: 40 });
+    const mouseXdamp = useSpring(rawMouseX, { stiffness: 60, damping: 60 });
+    const mouseYdamp = useSpring(rawMouseY, { stiffness: 60, damping: 60 });
 
     const [isTouchDevice, setIsTouchDevice] = useState(false);
 
@@ -55,8 +55,8 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
             if (isTouchDevice) return;
             const x = (e.clientX / window.innerWidth - 0.5) * 2;
             const y = (e.clientY / window.innerHeight - 0.5) * 2;
-            rawMouseX.set(x * 20); // Intensità movimento mouse
-            rawMouseY.set(y * 20);
+            rawMouseX.set(x * 5); // Intensità movimento mouse
+            rawMouseY.set(y * 5);
         };
 
         window.addEventListener('mousemove', handleMouse);
@@ -71,8 +71,8 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
     });
 
     // Calcolo Parallax puro
-    const leftY = useTransform(scrollYProgress, [0, 1], [150, -150]);
-    const rightY = useTransform(scrollYProgress, [0, 1], [-120, 120]);
+    const leftY = useTransform(scrollYProgress, [0, 1], [140, -140]);
+    const rightY = useTransform(scrollYProgress, [0, 1], [-110, 110]);
     return (
         <div ref={containerRef} className="relative w-full max-w-7xl mx-auto  flex flex-col items-center justify-center py-10">
             <span className={cn("absolute size-[90vw] sm:size-[70vw] max-w-[1000px] max-h-[1000px] md:size-[60vw] lg:size-[50vw]  bg-accent-500/25  top-1/2  -translate-y-1/2 rounded-full mask-radial-[50%_50%] mask-radial-from-0%  -z-50 hidden lg:block ")} />
@@ -81,11 +81,11 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
             </div>
             <Link href={url} className="relative w-full h-full flex items-center justify-center group">
 
-                {/* Left Card - Tilted, less opaque, faster scroll */}
+                {/* Left Card */}
                 <motion.div
                     style={{
                         y: leftY,
-                        x: mouseX,       // mouse orizzontale
+                        x: mouseX,
                     }}
                     className="absolute left-[10%] sm:left-[15%] md:left-[10%]  z-0 -rotate-15 brightness-90 pointer-events-none"
                 >
@@ -96,11 +96,11 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                     </div>
                 </motion.div>
 
-                {/* Right Card - Tilted, less opaque, slower scroll */}
+                {/* Right Card */}
                 <motion.div
                     style={{
                         y: rightY,
-                        x: mouseX,       // mouse orizzontale
+                        x: mouseX,
                     }}
                     className="absolute right-[10%] sm:right-[15%] md:right-[10%]  z-0 rotate-15 brightness-80 pointer-events-none"
                 >
@@ -111,11 +111,11 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                     </div>
                 </motion.div>
 
-                {/* Middle Card - Normal scroll, prominent */}
+                {/* Middle Card  */}
                 <motion.div
                     style={{
                         y: mouseYdamp,
-                        x: mouseXdamp,       // mouse orizzontale
+                        x: mouseXdamp,
                     }}
                     className="relative z-10">
                     <div className="min-h-[400px] h-[60vh] max-h-[550px] lg:max-h-[800px]   border   aspect-1/2  md:aspect-4/3  rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/20 ">
@@ -128,7 +128,7 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
             <motion.div
                 style={{
                     y: mouseYdamp,
-                    x: mouseXdamp,       // mouse orizzontale
+                    x: mouseXdamp,
                 }}
                 className="hidden md:flex gap-2 z-10 mt-3 md:*:text-sm *:text-foreground flex-wrap items-center justify-center  *:bg-background/70 *:shadow-xs *:backdrop-blur-md *:border-foreground/15 dark:*:border-white/15 ">
                 {
@@ -137,7 +137,7 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                         : itLabels.map((el, index) => <Badge key={index} variant="outline">{el}</Badge>)
                 }
             </motion.div>
-            {/* Visit Button with Glow */}
+
             <div className="relative mt-10 z-1 flex flex-row gap-3 ">
                 <Link href={url} >
                     <CustomButton variant='glow' className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />Visit</CustomButton>
