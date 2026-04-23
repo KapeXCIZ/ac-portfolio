@@ -1,6 +1,8 @@
 'use client'
 
+import { Link as NavLink } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
+import Link, { LinkProps } from "next/link";
 import { ButtonHTMLAttributes } from "react";
 
 
@@ -15,14 +17,48 @@ const variants = {
 
 type Variant = "ghost" | "outline" | "glow" | "solid" | "solidSuccess";
 
-interface CustomButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    children: React.ReactNode, className?: string, variant: Variant
+const baseStyle = "border border-transparent  transition-all duration-350 rounded-full ease-in-out px-6 py-2  flex justify-center items-center cursor-pointer";
+
+interface BaseProps<T> extends ButtonHTMLAttributes<T> {
+    children: React.ReactNode,
+    className?: string,
+    variant: Variant
 }
 
-export default function CustomButton({ children, className, variant = "glow", ...props }: CustomButtonProps) {
+interface CustomLinkProps extends BaseProps<LinkProps> {
+    href: string,
+}
+
+export function CustomNavLink({ children, className, variant = "glow", href }: CustomLinkProps) {
     return (
-        <button {...props} className={cn("border border-transparent  transition-all duration-350 rounded-full ease-in-out px-6 py-2  flex justify-center items-center cursor-pointer ", variants[variant], className)}>
+        <NavLink href={href} className={cn(baseStyle, variants[variant], className)}>
+            {children}
+        </NavLink>
+    );
+}
+
+export function CustomLink({ children, className, variant = "glow", href }: CustomLinkProps) {
+    return (
+        <Link href={href} className={cn(baseStyle, variants[variant], className)}>
+            {children}
+        </Link>
+    );
+}
+
+export function CustomAnchor({ children, className, variant = "glow", href }: CustomLinkProps) {
+    return (
+        <a href={href} className={cn(baseStyle, variants[variant], className)}>
+            {children}
+        </a>
+    );
+}
+
+export default function CustomButton({ children, className, variant = "glow", ...props }: BaseProps<HTMLButtonElement>) {
+    return (
+        <button {...props} className={cn(baseStyle, variants[variant], className)}>
             {children}
         </button>
     );
 }
+
+

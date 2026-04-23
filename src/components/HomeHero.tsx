@@ -1,7 +1,6 @@
 'use client'
 
-import CustomButton from "./CustomButton";
-import { Link } from "@/i18n/navigation";
+import { CustomNavLink } from "./CustomButton";
 import Typewrite from "./Typewrite";
 import { AtIcon, BriefcaseIcon, StarFourIcon } from "@phosphor-icons/react";
 import { useLocale, useTranslations } from "next-intl";
@@ -42,12 +41,8 @@ export default function HomeHero() {
                             <h3 className="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight mt-4">{t("r3.1")}<span className="font-thin">{t("r3.2")}</span><span className="italic  text-foreground">{t("r3.3")}</span><span className="font-normal">{t("r3.4")}</span>{t("r3.5")}</h3>
                         </span>
                         <div className="w-full flex justify-center items-center gap-4 pt-4 *:text-normal sm:*:text-xl *:z-0">
-                            <Link href={"/projects"} >
-                                <CustomButton variant="glow" className={"flex gap-1 -z-1"}><BriefcaseIcon /> {tButtons("projects")}</CustomButton>
-                            </Link>
-                            <Link href={"/about"} >
-                                <CustomButton variant="outline" className={"flex gap-1 -z-1"}><AtIcon /> {tButtons("about")}</CustomButton>
-                            </Link>
+                            <CustomNavLink variant="glow" href={"/projects"} className={"flex gap-1 -z-1"}><BriefcaseIcon /> {tButtons("projects")}</CustomNavLink>
+                            <CustomNavLink href={"/about"} variant="outline" className={"flex gap-1 -z-1"}><AtIcon /> {tButtons("about")}</CustomNavLink>
                         </div>
                     </div>
                 </div>

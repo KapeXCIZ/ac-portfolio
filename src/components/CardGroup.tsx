@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
-import CustomButton from './CustomButton';
+import { CustomNavLink } from './CustomButton';
 import { Link } from '@/i18n/navigation';
 import { ArrowUpRightIcon } from '@phosphor-icons/react';
 import { cn } from '@/lib/utils';
@@ -32,36 +32,8 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
     const locale = useLocale();
     const { enLabels, itLabels } = labels;
 
-    // --- MOUSE ANIMATION ---
-    const rawMouseX = useMotionValue(0);
-    const rawMouseY = useMotionValue(0);
 
-    // Molle solo per il mouse (per dare fluidità al movimento della mano)
-    const mouseX = useSpring(rawMouseX, { stiffness: 100, damping: 50 });
-    const mouseY = useSpring(rawMouseY, { stiffness: 100, damping: 50 });
 
-    // Versione più ammortizzata per la card centrale
-    const mouseXdamp = useSpring(rawMouseX, { stiffness: 60, damping: 60 });
-    const mouseYdamp = useSpring(rawMouseY, { stiffness: 60, damping: 60 });
-
-    const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-    useEffect(() => {
-        setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
-
-        if (window.matchMedia('(pointer: coarse)').matches) return;
-
-        const handleMouse = (e: MouseEvent) => {
-            if (isTouchDevice) return;
-            const x = (e.clientX / window.innerWidth - 0.5) * 2;
-            const y = (e.clientY / window.innerHeight - 0.5) * 2;
-            rawMouseX.set(x * 5); // Intensità movimento mouse
-            rawMouseY.set(y * 5);
-        };
-
-        window.addEventListener('mousemove', handleMouse);
-        return () => window.removeEventListener('mousemove', handleMouse);
-    }, [rawMouseX, rawMouseY, isTouchDevice]);
 
     // --- SCROLL / PARALLAX ---
     // Usiamo direttamente scrollYProgress senza useSpring per non lottare con Lenis
@@ -77,7 +49,7 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
         <div ref={containerRef} className="relative w-full max-w-7xl mx-auto  flex flex-col items-center justify-center py-10">
             <span className={cn("absolute size-[90vw] sm:size-[70vw] max-w-[1000px] max-h-[1000px] md:size-[60vw] lg:size-[50vw]  bg-accent-500/25  top-1/2  -translate-y-1/2 rounded-full mask-radial-[50%_50%] mask-radial-from-0%  -z-50 hidden lg:block ")} />
             <div className='flex justify-center '>
-                <motion.span style={{ x: mouseX, y: mouseY }} className='z-10 w-fit  shadow-xl/5 mx-16 text-center py-3 md:py-4 px-6 md:px-10 rounded-full backdrop-blur-md  bg-background/70 dark:bg-background/40  border m-4 text-3xl lg:text-4xl font-deco'><span className='hidden md:inline-block '>{t("h1")}&nbsp;</span><span className='underline hover:decoration-wavy whitespace-nowrap underline-offset-2 decoration-2 decoration-accent-500 '>{t('h2')}</span></motion.span>
+                <motion.span className='z-10 w-fit  shadow-xl/5 mx-16 text-center py-3 md:py-4 px-6 md:px-10 rounded-full backdrop-blur-md  bg-background/70 dark:bg-background/40  border m-4 text-3xl lg:text-4xl font-deco'><span className='hidden md:inline-block '>{t("h1")}&nbsp;</span><span className='underline hover:decoration-wavy whitespace-nowrap underline-offset-2 decoration-2 decoration-accent-500 '>{t('h2')}</span></motion.span>
             </div>
             <Link href={url} className="relative w-full h-full flex items-center justify-center group">
 
@@ -85,13 +57,14 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                 <motion.div
                     style={{
                         y: leftY,
-                        x: mouseX,
+                        transitionDuration: ".25s",
+
                     }}
                     className="absolute left-[10%] sm:left-[15%] md:left-[10%]  z-0 -rotate-15 brightness-90 pointer-events-none"
                 >
                     <div className="min-h-[300px] h-[45vh] max-h-[450px] lg:max-h-[700px] border aspect-1/2  md:aspect-4/3 rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/10">
-                        <Image width={500} height={500} src={leftImg} alt="Left project" className="w-full h-full object-cover object-top hidden md:block" />
-                        <Image width={500} height={1000} src={leftImgMobile} alt="Left project" className="w-full h-full object-cover object-top block md:hidden" />
+                        <Image width={500} loading='lazy' height={500} src={leftImg} alt="Left project" className="w-full h-full object-cover object-top hidden md:block" />
+                        <Image width={500} loading='lazy' height={1000} src={leftImgMobile} alt="Left project" className="w-full h-full object-cover object-top block md:hidden" />
 
                     </div>
                 </motion.div>
@@ -100,23 +73,20 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                 <motion.div
                     style={{
                         y: rightY,
-                        x: mouseX,
+                        transitionDuration: ".25s"
                     }}
                     className="absolute right-[10%] sm:right-[15%] md:right-[10%]  z-0 rotate-15 brightness-80 pointer-events-none"
                 >
                     <div className="min-h-[350px] h-[50vh] max-h-[500px] lg:max-h-[750px]  border aspect-1/2  md:aspect-4/3 rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/10">
-                        <Image width={1000} height={1000} src={rightImg} alt="Right project" className="w-full h-full object-cover object-top hidden md:block" />
-                        <Image width={550} height={1100} src={rightImgMobile} alt="Right project" className="w-full h-full object-cover object-top block md:hidden" />
+                        <Image width={1000} loading='lazy' height={1000} src={rightImg} alt="Right project" className="w-full h-full object-cover object-top hidden md:block" />
+                        <Image width={550} loading='lazy' height={1100} src={rightImgMobile} alt="Right project" className="w-full h-full object-cover object-top block md:hidden" />
 
                     </div>
                 </motion.div>
 
                 {/* Middle Card  */}
                 <motion.div
-                    style={{
-                        y: mouseYdamp,
-                        x: mouseXdamp,
-                    }}
+
                     className="relative z-10">
                     <div className="min-h-[400px] h-[60vh] max-h-[550px] lg:max-h-[800px]   border   aspect-1/2  md:aspect-4/3  rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/20 ">
                         <Image width={1000} height={1000} src={middleImg} alt="Main project" className="w-full h-full object-cover object-top hidden md:block" />
@@ -126,10 +96,6 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                 </motion.div>
             </Link>
             <motion.div
-                style={{
-                    y: mouseYdamp,
-                    x: mouseXdamp,
-                }}
                 className="hidden md:flex gap-2 z-10 mt-3 md:*:text-sm *:text-foreground flex-wrap items-center justify-center  *:bg-background/70 *:shadow-xs *:backdrop-blur-md *:border-foreground/15 dark:*:border-white/15 ">
                 {
                     locale == "en"
@@ -139,9 +105,7 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
             </motion.div>
 
             <div className="relative mt-10 z-1 flex flex-row gap-3 ">
-                <Link href={url} >
-                    <CustomButton variant='glow' className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />Visit</CustomButton>
-                </Link>
+                <CustomNavLink href={url} variant='glow' className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />Visit</CustomNavLink>
             </div>
         </div>
     );

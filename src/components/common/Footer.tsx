@@ -23,7 +23,7 @@ export default function Footer() {
     return (
         <footer className="w-full py-4 px-6 bg-background  z-50 relative">
             <ContextualLink />
-            <button className="p-3 border rounded-full absolute md:hidden z-60 hover:bg-foreground/5 transition bottom-4 right-6 " onClick={() => setTheme(theme === "dark" ? "light" : "dark")} >
+            <button aria-label="Toggle language (IT/EN)" className="p-3 border rounded-full absolute md:hidden z-60 hover:bg-foreground/5 transition bottom-4 right-6 " onClick={() => setTheme(theme === "dark" ? "light" : "dark")} >
                 {theme === "light" ? <SunIcon /> : <MoonIcon />}
             </button>
             <div className="flex flex-col  z-50  gap-2 md:gap-1 md:grid md:grid-cols-5  relative text-foreground/50 justify-between">
@@ -38,16 +38,16 @@ export default function Footer() {
                     <h1>{date.getFullYear()}</h1>
                 </div>
                 <div className="flex flex-row gap-2 justify-start md:justify-center text-2xl items-center  *:hover:text-foreground  *:transition-colors *:duration-300 *:ease-in-out order-1 md:order-2">
-                    <Link rel="noopener noreferrer" href={"/files/alessio-capecchi-cv.pdf"}>
+                    <Link aria-label="Open Alessio's CV" rel="noopener noreferrer" href={"/files/alessio-capecchi-cv.pdf"}>
                         <ReadCvLogoIcon weight="light" />
                     </Link>
-                    <NavLink href={"https://www.linkedin.com/in/alessio-capecchi"}>
+                    <NavLink aria-label="Visit Alessio's Linkedin account" href={"https://www.linkedin.com/in/alessio-capecchi"}>
                         <LinkedinLogoIcon weight="light" />
                     </NavLink>
-                    <NavLink href={"https://github.com/KapeXCIZ"}>
+                    <NavLink aria-label="Visit Alessio's Github account" href={"https://github.com/KapeXCIZ"}>
                         <GithubLogoIcon weight="light" />
                     </NavLink>
-                    <a href="mailto:hello@alessiocapecchi.com">
+                    <a aria-label="Send an email to hello@alessiocapecchi.com" href="mailto:hello@alessiocapecchi.com">
                         <EnvelopeSimpleIcon weight="light" />
                     </a>
                 </div>

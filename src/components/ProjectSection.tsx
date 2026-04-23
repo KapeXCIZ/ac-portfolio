@@ -1,8 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
-import CustomButton from "./CustomButton";
+import { CustomNavLink } from "./CustomButton";
 import { Badge } from "./ui/badge";
 
 
@@ -81,12 +80,8 @@ export default function ProjectSection({
                             }
                         </div>
                         <div className="mx-auto mt-3 flex gap-3 text-normal">
-                            <Link href={projectUrl} >
-                                <CustomButton variant="glow" className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />{t("b1")}</CustomButton>
-                            </Link>
-                            <Link href={"/about#form"}  >
-                                <CustomButton variant="outline" className="flex justify-center items-center gap-2 text-accent-400"><BriefcaseIcon weight="bold" />{t("b2")}</CustomButton>
-                            </Link>
+                            <CustomNavLink href={projectUrl} variant="glow" className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />{t("b1")}</CustomNavLink>
+                            <CustomNavLink href={"/about#form"} variant="outline" className="flex justify-center items-center gap-2 text-accent-400"><BriefcaseIcon weight="bold" />{t("b2")}</CustomNavLink>
                         </div>
                     </div>
                 </div>

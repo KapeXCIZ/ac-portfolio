@@ -134,7 +134,7 @@ export default function Form({ success, setSuccess }: { success: boolean, setSuc
                 />
                 <div className="w-full  flex flex-col justify-center items-center gap-2">
 
-                    <CustomButton className="w-full flex flex-row justify-center items-center gap-1 disabled:pointer-events-none " type="submit" variant="solid" disabled={form.formState.isSubmitting || success}>
+                    <CustomButton aria-label="Send email with form data" className="w-full flex flex-row justify-center items-center gap-1 disabled:pointer-events-none " type="submit" variant="solid" disabled={form.formState.isSubmitting || success}>
                         {
                             form.formState.isSubmitting
                                 ? <><EnvelopeSimpleIcon />{t("sending")}</>

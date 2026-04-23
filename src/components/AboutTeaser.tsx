@@ -2,12 +2,12 @@
 
 
 
-import CustomButton from "./CustomButton";
+import { CustomLink, CustomNavLink } from "./CustomButton";
 import { AtIcon, BriefcaseIcon, ReadCvLogoIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
-import { Link as NavLink } from "@/i18n/navigation";
+
+
 
 export default function AboutTeaser() {
     const t = useTranslations("home.teaser");
@@ -19,17 +19,14 @@ export default function AboutTeaser() {
             <h1 className="text-center font-sans text-3xl md:text-4xl font-light z-1 px-6">{t("r1")}<br /><span className="italic font-serif">{t("r2")}</span></h1>
             <div className="flex flex-row gap-3  justify-center items-center">
                 {/* cta */}
-                <NavLink href={"/about#form"} className="z-0  md:text-lg">
-                    <CustomButton className="flex gap-1 items-center justify-center -z-1 " variant="solid"><AtIcon />{t("b1")}</CustomButton>
-                </NavLink>
+                <CustomNavLink aria-label="Go to the contact form on the about page" href={"/about#form"} className="flex gap-1 items-center justify-center z-0  md:text-lg " variant="solid"><AtIcon />{t("b1")}</CustomNavLink>
                 {/* secondary button */}
                 {locale === "it"
-                    ? <NavLink href={"/projects"} className="z-0 md:text-lg">
-                        <CustomButton className="flex gap-1 items-center justify-center -z-1 " variant="outline"><BriefcaseIcon />{t("b2")}</CustomButton>
-                    </NavLink>
-                    : <Link href={"/files/alessio-capecchi-cv.pdf"} target="_blank" className="z-0 md:text-lg">
-                        <CustomButton className="flex gap-1 items-center justify-center -z-1 " variant="outline"><ReadCvLogoIcon />{t("b2")}</CustomButton>
-                    </Link>
+                    ?
+                    <CustomNavLink href={"/projects"} aria-label="Go to the projects page" className="flex gap-1 items-center justify-center z-0  md:text-lg " variant="outline"><BriefcaseIcon />{t("b2")}</CustomNavLink>
+
+                    :
+                    <CustomLink aria-label="Open Alessio's CV" href={"/files/alessio-capecchi-cv.pdf"} className="flex gap-1 items-center justify-center z-0  md:text-lg " variant="outline"><ReadCvLogoIcon />{t("b2")}</CustomLink>
                 }
 
             </div>

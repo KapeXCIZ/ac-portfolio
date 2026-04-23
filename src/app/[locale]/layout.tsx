@@ -76,8 +76,8 @@ export default async function LocaleLayout({
 					>
 						<NextIntlClientProvider messages={messages}>
 							<ReactLenis root options={{
-								lerp: 0.1, // Più basso è, più è fluido (ma più "lento")
-								duration: 1.5,
+								lerp: 0.2, // Più basso è, più è fluido (ma più "lento")
+								duration: 1,
 								smoothWheel: true,
 								// Rendi Lenis prioritario per le animazioni
 								syncTouch: false,
