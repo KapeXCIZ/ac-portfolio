@@ -32,40 +32,32 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
     const locale = useLocale();
     const { enLabels, itLabels } = labels;
 
-
-
-
-    // --- SCROLL / PARALLAX ---
-    // Usiamo direttamente scrollYProgress senza useSpring per non lottare con Lenis
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start end", "end start"]
     });
 
-    // Calcolo Parallax puro
     const leftY = useTransform(scrollYProgress, [0, 1], [140, -140]);
     const rightY = useTransform(scrollYProgress, [0, 1], [-110, 110]);
+
     return (
         <div ref={containerRef} className="relative w-full max-w-7xl mx-auto  flex flex-col items-center justify-center py-10">
             <span className={cn("absolute size-[90vw] sm:size-[70vw] max-w-[1000px] max-h-[1000px] md:size-[60vw] lg:size-[50vw]  bg-accent-500/25  top-1/2  -translate-y-1/2 rounded-full mask-radial-[50%_50%] mask-radial-from-0%  -z-50 hidden lg:block ")} />
             <div className='flex justify-center '>
                 <motion.span className='z-10 w-fit  shadow-xl/5 mx-16 text-center py-3 md:py-4 px-6 md:px-10 rounded-full backdrop-blur-md  bg-background/70 dark:bg-background/40  border m-4 text-3xl lg:text-4xl font-deco'><span className='hidden md:inline-block '>{t("h1")}&nbsp;</span><span className='underline hover:decoration-wavy whitespace-nowrap underline-offset-2 decoration-2 decoration-accent-500 '>{t('h2')}</span></motion.span>
             </div>
-            <Link href={url} className="relative w-full h-full flex items-center justify-center group">
-
+            <Link href={url} aria-label={`Visit ${url}`} className="relative w-full h-full flex items-center justify-center group">
                 {/* Left Card */}
                 <motion.div
                     style={{
                         y: leftY,
                         transitionDuration: ".25s",
-
                     }}
-                    className="absolute left-[10%] sm:left-[15%] md:left-[10%]  z-0 -rotate-15 brightness-90 pointer-events-none"
+                    className="absolute left-[10%]  md:left-[10%] xl:left-[-10%]  z-0 -rotate-15 brightness-90 pointer-events-none"
                 >
                     <div className="min-h-[300px] h-[45vh] max-h-[450px] lg:max-h-[700px] border aspect-1/2  md:aspect-4/3 rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/10">
                         <Image width={500} loading='lazy' height={500} src={leftImg} alt="Left project" className="w-full h-full object-cover object-top hidden md:block" />
                         <Image width={500} loading='lazy' height={1000} src={leftImgMobile} alt="Left project" className="w-full h-full object-cover object-top block md:hidden" />
-
                     </div>
                 </motion.div>
 
@@ -75,23 +67,22 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
                         y: rightY,
                         transitionDuration: ".25s"
                     }}
-                    className="absolute right-[10%] sm:right-[15%] md:right-[10%]  z-0 rotate-15 brightness-80 pointer-events-none"
+
+                    className="absolute right-[10%]  md:right-[10%] xl:right-[-10%]  z-0 rotate-15 brightness-80 pointer-events-none"
                 >
                     <div className="min-h-[350px] h-[50vh] max-h-[500px] lg:max-h-[750px]  border aspect-1/2  md:aspect-4/3 rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/10">
                         <Image width={1000} loading='lazy' height={1000} src={rightImg} alt="Right project" className="w-full h-full object-cover object-top hidden md:block" />
                         <Image width={550} loading='lazy' height={1100} src={rightImgMobile} alt="Right project" className="w-full h-full object-cover object-top block md:hidden" />
-
                     </div>
                 </motion.div>
 
                 {/* Middle Card  */}
                 <motion.div
 
-                    className="relative z-10">
-                    <div className="min-h-[400px] h-[60vh] max-h-[550px] lg:max-h-[800px]   border   aspect-1/2  md:aspect-4/3  rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/20 ">
+                    className="relative z-10 ">
+                    <div className="min-h-[400px] mx-4 h-[60vh] max-h-[550px] lg:max-h-[750px]   border   aspect-1/2  md:aspect-4/3  rounded-4xl overflow-hidden shadow-2xl shadow-accent-500/20 ">
                         <Image width={1000} height={1000} src={middleImg} alt="Main project" className="w-full h-full object-cover object-top hidden md:block" />
                         <Image width={700} height={1400} src={middleImgMobile} alt="Main project" className="w-full h-full object-cover object-top block md:hidden" />
-
                     </div>
                 </motion.div>
             </Link>
@@ -105,7 +96,7 @@ export default function CardGroup({ leftImg, middleImg, rightImg, leftImgMobile,
             </motion.div>
 
             <div className="relative mt-10 z-1 flex flex-row gap-3 ">
-                <CustomNavLink href={url} variant='glow' className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />Visit</CustomNavLink>
+                <CustomNavLink href={url} aria-label={`Visit ${url}`} variant='glow' className="flex justify-center items-center gap-2"><ArrowUpRightIcon weight="bold" />Visit</CustomNavLink>
             </div>
         </div>
     );
@@ -119,12 +110,12 @@ export function Section({ projectLabels }: { projectLabels: LabelObj[] }) {
                 <div className="relative z-10 md:pt-10 flex flex-col items-center">
                     {/* First Section */}
                     <CardGroup
-                        middleImg={"/images/projects/t&t-1.png"}
-                        leftImg={"/images/projects/t&t-2.png"}
-                        rightImg={"/images/projects/t&t-3.png"}
-                        middleImgMobile={"/images/projects/t&t-1-mobile.png"}
-                        leftImgMobile={"/images/projects/t&t-2-mobile.png"}
-                        rightImgMobile={"/images/projects/t&t-3-mobile.png"}
+                        middleImg={"/images/projects/t&t-1.webp"}
+                        leftImg={"/images/projects/t&t-2.webp"}
+                        rightImg={"/images/projects/t&t-3.webp"}
+                        middleImgMobile={"/images/projects/t&t-1-mobile.webp"}
+                        leftImgMobile={"/images/projects/t&t-2-mobile.webp"}
+                        rightImgMobile={"/images/projects/t&t-3-mobile.webp"}
                         url="https://www.teachandtaste.it/"
                         translations='projects.1'
                         labels={projectLabels[0]}
@@ -135,19 +126,19 @@ export function Section({ projectLabels }: { projectLabels: LabelObj[] }) {
 
                     {/* Second Section */}
                     <CardGroup
-                        middleImg={"/images/projects/ag-1.png"}
-                        leftImg={"/images/projects/ag-2.png"}
-                        rightImg={"/images/projects/ag-3.png"}
-                        middleImgMobile={"/images/projects/ag-1-mobile.png"}
-                        leftImgMobile={"/images/projects/ag-2-mobile.png"}
-                        rightImgMobile={"/images/projects/ag-3-mobile.png"}
+                        middleImg={"/images/projects/ag-1.webp"}
+                        leftImg={"/images/projects/ag-2.webp"}
+                        rightImg={"/images/projects/ag-3.webp"}
+                        middleImgMobile={"/images/projects/ag-1-mobile.webp"}
+                        leftImgMobile={"/images/projects/ag-2-mobile.webp"}
+                        rightImgMobile={"/images/projects/ag-3-mobile.webp"}
                         url="https://www.adreanigiovanni.com/"
                         translations='projects.2'
                         labels={projectLabels[1]}
                     />
 
                     {/* Footer Padding */}
-                    <div className="h-32 md:h-64" />
+                    <span className="h-16 " />
                 </div>
             </section>
         </>)

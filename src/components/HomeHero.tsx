@@ -13,7 +13,7 @@ export default function HomeHero() {
     return (
         <>
             <section className=" mx-auto flex items-center justify-center my-8 gap-10 px-6 h-[70vh] relative">
-                <span className="absolute w-full h-full bg-[url(/images/bg-logo-1.png)] bg-animation brightness-5 dark:brightness-10 opacity-70   invert dark:invert-0 mask-radial-[50%_60%] mask-radial-from-10% -z-5 " />
+                <span className="absolute w-full h-full bg-[url(/images/svgs/bg-logo.svg)] bg-animation brightness-5 dark:brightness-10 opacity-70   invert dark:invert-0 mask-radial-[50%_60%] mask-radial-from-10% -z-5 " />
                 <div className="container mx-auto">
                     <div className="flex flex-col gap-8 py-8 text-center ">
                         <span className="spotlight-text z-1">

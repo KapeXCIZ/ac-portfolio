@@ -25,18 +25,23 @@ export default function Navbar() {
         const onScroll = () => {
             setIsScrolled(window.scrollY > 40);
         };
+
         setIsScrolled(window.scrollY > 40);
-        const form = document.getElementById("form");
-
-        inView(form,
-            () => {
-                setFormInView(true);
-                return () => setFormInView(false);
-            }
-        )
-
         window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
+
+        const form = document.getElementById("form");
+        let unsubscribe: (() => void) | undefined;
+
+        if (form) {
+            unsubscribe = inView(form, () => {
+                setFormInView(true);
+            });
+        }
+
+        return () => {
+            window.removeEventListener('scroll', onScroll);
+            unsubscribe?.();
+        };
     }, []);
 
     // Slider passes an array of numbers; take the first value
@@ -56,9 +61,7 @@ export default function Navbar() {
             <nav className={cn("py-4 px-0 mx:px-4 fixed w-full h-20 top-0 z-50 duration-[.8s] border-b border-transparent transition-all ", isScrolled ? "backdrop-blur-lg bg-background/65 border-white-400/25 shadow-2xl dark:shadow-accent-600/15 shadow-accent-400/10" : "")}>
                 <div className="h-full flex grid-cols-3 container justify-between relative items-center w-full  mx-auto z-50 px-4" >
                     <div className="hidden sm:block h-3/4  flex-initial basis-3xs">
-                        <NavLink aria-label="Return to the homepage" href={"/"} className="w-fit">
-                            <Logo className="h-full  opacity-90 hover:opacity-100 transition ease-in-out" />
-                        </NavLink>
+                        <Logo className="h-full  opacity-90 hover:opacity-100 transition ease-in-out" />
                     </div>
                     <div className="flex flex-row mx-auto flex-none gap-4 text-md md:text-lg ">
                         <NavLink aria-label="Go to the homepage" href={"/"} className={cn("underlineHover  active:scale-90  transition-[scale] duration-150 ease-in-out ", currPage == "/" ? "underlineHoverActive" : "")}>

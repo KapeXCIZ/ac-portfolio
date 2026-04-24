@@ -13,9 +13,11 @@ export default function AboutPage() {
 
         <>
             <AboutHero />
-            <AboutContent />
-            {locale === "en" && <SkillsGrid />}
-            <AboutCTA />
+            <div className="bg-background">
+                <AboutContent />
+                {locale === "en" && <SkillsGrid />}
+                <AboutCTA />
+            </div>
         </>
 
 

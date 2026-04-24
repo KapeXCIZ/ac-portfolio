@@ -139,7 +139,7 @@ export default function Form({ success, setSuccess }: { success: boolean, setSuc
                             form.formState.isSubmitting
                                 ? <><EnvelopeSimpleIcon />{t("sending")}</>
                                 : success
-                                    ? <>{t("sent")}</>
+                                    ? <>🚀 {t("sent")}</>
                                     : <><PaperPlaneTiltIcon />{t("send")}</>
                         }
                     </CustomButton>

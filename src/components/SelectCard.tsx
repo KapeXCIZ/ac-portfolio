@@ -30,5 +30,3 @@ SelectCard.Description = ({ children }) => (
 SelectCard.Description.displayName = "SelectCard.Description"
 
 export default SelectCard
-
-

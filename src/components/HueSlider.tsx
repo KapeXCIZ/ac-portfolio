@@ -19,7 +19,7 @@ export default function HueSlider({
         <>
             <DropdownMenu modal={false}>
                 <DropdownMenuTrigger className={className ? className : ""} asChild>
-                    <Button variant="outline" size="icon" >
+                    <Button variant="outline" size="icon" aria-label="Open hue slider" >
                         <PaintBucketIcon weight="duotone" className="text-accent-500 dark:text-accent-400" />
                         <span className="sr-only">Toggle theme color</span>
                     </Button>

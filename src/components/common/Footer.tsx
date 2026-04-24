@@ -14,6 +14,7 @@ import { Link as NavLink } from "@/i18n/navigation";
 import ContextualLink from "../ContextualLink";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import packageJson from "../../../package.json"
 
 
 export default function Footer() {
@@ -34,6 +35,7 @@ export default function Footer() {
                 </span> */}
                 <div className=" flex flex-row gap-1 items-center font-light order-2 md:order-1 col-span-2">
                     <h1>ALESSIO CAPECCHI</h1>
+                    <h1>v{packageJson.version}</h1>
                     <CopyrightIcon />
                     <h1>{date.getFullYear()}</h1>
                 </div>

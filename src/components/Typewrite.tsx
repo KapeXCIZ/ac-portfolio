@@ -18,22 +18,21 @@ class TxtClass {
         let cumulativeDelay = 0;
 
         for (let i = 0; i < this.txt.length; i++) {
-            const jitter = Math.round(Math.random() * 200) - 100; // -100 .. +100 ms
-            const delayForChar = Math.max(10, period + jitter);  // intervallo effettivo per questo char
-            cumulativeDelay += delayForChar;                      // accumula i ritardi
+            const jitter = Math.round(Math.random() * 200) - 100;
+            const delayForChar = Math.max(10, period + jitter);
+            cumulativeDelay += delayForChar;
 
-            const snapshot = this.txt.substring(0, i + 1);       // evita problemi di closure
+            const snapshot = this.txt.substring(0, i + 1);
 
             const t = window.setTimeout(() => {
                 const d = document.getElementById("typewrite" + wrapperId);
                 if (d) d.textContent = snapshot;
 
-                // se è l'ultimo carattere, pianifica chiamata finale onComplete
                 if (i === this.txt.length - 1) {
                     const tEnd = window.setTimeout(() => this.delete(wrapperId, onComplete), 1500);
                     timers.push(tEnd);
                 }
-            }, cumulativeDelay); // ← qui usiamo cumulativeDelay (con jitter)
+            }, cumulativeDelay);
 
             timers.push(t);
         }
@@ -49,18 +48,16 @@ class TxtClass {
 
             cumulativeDelay += 100;
 
-            const snapshot = this.txt.substring(0, i - 1);       // evita problemi di closure
+            const snapshot = this.txt.substring(0, i - 1);
 
             const t = window.setTimeout(() => {
                 const d = document.getElementById("typewrite" + wrapperId);
                 if (d) d.textContent = snapshot;
-
-                // se è l'ultimo carattere, pianifica chiamata finale onComplete
                 if (i === 1) {
                     const tEnd = window.setTimeout(() => onComplete?.(), 500);
                     timers.push(tEnd);
                 }
-            }, cumulativeDelay); // ← qui usiamo cumulativeDelay (con jitter)
+            }, cumulativeDelay);
 
             timers.push(t);
         }
@@ -88,7 +85,6 @@ export default function Typewrite({ phrases, period, id }: { phrases: string[]; 
     return (
         <>
             <span id={`typewrite${id}`} className="typewrite">
-
             </span>
         </>
     )

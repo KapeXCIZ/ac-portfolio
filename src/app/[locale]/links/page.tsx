@@ -5,11 +5,8 @@ import SelectSection from "@/components/SelectSection";
 export default function AboutPage() {
 
     return (
-
         <>
             <SelectSection />
         </>
-
-
     )
 };

@@ -11,6 +11,8 @@ import { notFound } from 'next/navigation';
 import "@/app/globals.css";
 import 'lenis/dist/lenis.css';
 import { ReactLenis } from 'lenis/react';
+import { getTranslations } from 'next-intl/server';
+import TransitionHandler from "./transition-handler";
 
 
 
@@ -24,18 +26,12 @@ const myFont = localFont({
 })
 
 
-
-
-
-import { getTranslations } from 'next-intl/server';
-import TransitionHandler from "./transition-handler";
-
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: 'metadata' });
 
 	return {
-		title: t('home.title'),         // cambia il namespace per ogni pagina
+		title: t('home.title'),
 		description: t('home.description'),
 		icons: {
 			icon: [

@@ -2,9 +2,6 @@
 
 import { useTranslations } from "next-intl"
 
-
-
-
 export default function ProjectsHero() {
     const t = useTranslations("projects.hero")
 

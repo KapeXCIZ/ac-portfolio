@@ -13,6 +13,7 @@ import { useLocale } from "next-intl";
 import { useTranslations } from "use-intl";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import AnimeText from "./common/AnimeText";
 
 interface ProjectSectionProps {
     runnerUp: string[];
@@ -52,12 +53,8 @@ export default function ProjectSection({
         stiffness: 30,
     });
 
-    // Parallax:
-    // Middle card is normal (no offset relative to container)
-    // Left card is faster (moves up more)
     const rot = useTransform(scaleX, [0, 1], [500, -500]);
     const rotRev = useTransform(scaleX, [0, 1], [-500, 500])
-
 
     return (
         <span className="relative w-fit mx-auto flex flex-col justify-center items-center mt-20">
@@ -71,7 +68,7 @@ export default function ProjectSection({
                     <div className="flex flex-col gap-3 items-center justify-center w-full mt-4 lg:mt-0  col-span-3 xl:col-span-2">
                         <p className="font-thin text-lg flex flex-row gap-2 items-center "><motion.span style={{ rotate: rot }}><StarFourIcon weight="thin" /></motion.span> {t("featured")} <motion.span style={{ rotate: rotRev }}><StarFourIcon weight="thin" /></motion.span></p>
                         <h1 className="text-center font-deco  tracking-tight  text-5xl md:text-6xl lg:text-7xl lg:leading-16 ">{t("h1")}<br /><span className="underline decoration-accent-400 decoration-[3px] underline-offset-8 hover:decoration-wavy">{t("h2")}</span></h1>
-                        <p className="text-xl  lg:text-2xl  font-light mt-3 px-0 md:px-6 text-center">{t("desc")}</p>
+                        <AnimeText className="text-xl  lg:text-2xl  font-light mt-3 px-0 md:px-6 text-center">{t("desc")}</AnimeText>
                         <div className="flex gap-2 mt-3 md:*:text-sm *:text-muted-foreground flex-wrap items-center justify-center  *:bg-white/0 dark:*:bg-white/0 *:border-foreground/15 dark:*:border-white/15 z-1">
                             {
                                 locale == "en"

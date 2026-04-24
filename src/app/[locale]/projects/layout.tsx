@@ -5,7 +5,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const t = await getTranslations({ locale, namespace: 'metadata' });
 
     return {
-        title: t('projects.title'),         // cambia il namespace per ogni pagina
+        title: t('projects.title'),
         description: t('projects.description'),
         icons: {
             icon: [
